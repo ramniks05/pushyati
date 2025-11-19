@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - Pushyati®</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="bi bi-capsule"></i> Pushyati®
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="partners.html">Partners</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="products.html">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="career.html">Career</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <div class="page-header" style="background: linear-gradient(135deg, #003d7a 0%, #0066cc 100%);">
+        <div style="position: absolute; top: 0; right: 0; width: 40%; height: 100%; background-image: url('https://via.placeholder.com/600x800/0066cc/ffffff?text=Products'); background-size: cover; background-position: center; opacity: 0.2; z-index: 1;"></div>
+        <div class="container">
+            <div class="page-header-content">
+                <nav aria-label="breadcrumb" class="breadcrumb-custom">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                        <li class="breadcrumb-item active">Products</li>
+                    </ol>
+                </nav>
+                <h1 class="display-4 fw-bold mb-3">Our Products</h1>
+                <p class="lead">Comprehensive range of pharmaceuticals and nutraceuticals</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Category Tabs -->
+    <section class="section">
+        <div class="container">
+            <div class="category-tabs">
+                <button class="category-tab active" onclick="showCategory('nutraceuticals')">Nutraceuticals</button>
+                <button class="category-tab" onclick="showCategory('pharmaceuticals')">Pharmaceuticals</button>
+            </div>
+            
+            <!-- Nutraceuticals Category -->
+            <div id="nutraceuticals" class="category-content">
+                <h3 class="mb-5 text-center">Nutraceutical Products</h3>
+                
+                <!-- General Wellness & Immunity -->
+                <div class="mb-5">
+                    <h4 class="mb-4"><i class="bi bi-heart-pulse text-primary"></i> General Wellness & Immunity</h4>
+                    <div class="row">
+                        <div class="col-md-6 col-lg-4 mb-4">
+                            <a href="product-detail.html?product=rebavit-cap" class="product-card">
+                                <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=600&h=400&fit=crop" alt="Rebavit Cap" class="product-image">
+                                <div class="product-card-body">
+                                    <div class="product-category">General Wellness & Immunity</div>
+                                    <h5 class="product-name">Rebavit Cap</h5>
+                                    <p class="product-benefits">Supports general wellness and boosts immunity with essential vitamins and nutrients.</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-md-6 col-lg-4 mb-4">
+                            <a href="product-detail.html?product=rebavit-syp" class="product-card">
+                                <img src="https://images.unsplash.com/photo-1550572017-edd951b55104?w=600&h=400&fit=crop" alt="Rebavit Syp" class="product-image">
+                                <div class="product-card-body">
+                                    <div class="product-category">General Wellness & Immunity</div>
+                                    <h5 class="product-name">Rebavit Syp</h5>
+                                    <p class="product-benefits">Liquid formulation for enhanced immunity and overall wellness support.</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Bone & Joint Health -->
+                <div class="mb-5">
+                    <h4 class="mb-4"><i class="bi bi-bone text-primary"></i> Bone & Joint Health</h4>
+                    <div class="row">
+                        <div class="col-md-6 col-lg-4 mb-4">
+                            <a href="product-detail.html?product=calciblis" class="product-card">
+                                <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&h=400&fit=crop" alt="Calciblis" class="product-image">
+                                <div class="product-card-body">
+                                    <div class="product-category">Bone & Joint Health</div>
+                                    <h5 class="product-name">Calciblis</h5>
+                                    <p class="product-benefits">Promotes bone strength and joint health with essential calcium and minerals.</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-md-6 col-lg-4 mb-4">
+                            <a href="product-detail.html?product=ostoreph" class="product-card">
+                                <img src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=600&h=400&fit=crop" alt="Ostoreph" class="product-image">
+                                <div class="product-card-body">
+                                    <div class="product-category">Bone & Joint Health</div>
+                                    <h5 class="product-name">Ostoreph</h5>
+                                    <p class="product-benefits">Advanced formula for bone density and joint mobility support.</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Digestive & Liver Health -->
+                <div class="mb-5">
+                    <h4 class="mb-4"><i class="bi bi-stomach text-primary"></i> Digestive & Liver Health</h4>
+                    <div class="row">
+                        <div class="col-md-6 col-lg-4 mb-4">
+                            <a href="product-detail.html?product=livoreph-xt-nutra" class="product-card">
+                                <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=600&h=400&fit=crop" alt="Livoreph XT" class="product-image">
+                                <div class="product-card-body">
+                                    <div class="product-category">Digestive & Liver Health</div>
+                                    <h5 class="product-name">Livoreph XT</h5>
+                                    <p class="product-benefits">Supports liver function and digestive health with natural ingredients.</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Women's Wellness -->
+                <div class="mb-5">
+                    <h4 class="mb-4"><i class="bi bi-gender-female text-primary"></i> Women's Wellness</h4>
+                    <div class="row">
+                        <div class="col-md-6 col-lg-4 mb-4">
+                            <a href="product-detail.html?product=pusabam-q10" class="product-card">
+                                <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=600&h=400&fit=crop" alt="Pusabam Q10" class="product-image">
+                                <div class="product-card-body">
+                                    <div class="product-category">Women's Wellness</div>
+                                    <h5 class="product-name">Pusabam Q10</h5>
+                                    <p class="product-benefits">Coenzyme Q10 formulation for women's health and wellness.</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-md-6 col-lg-4 mb-4">
+                            <a href="product-detail.html?product=feronent-ls" class="product-card">
+                                <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=600&h=400&fit=crop" alt="Feronent LS" class="product-image">
+                                <div class="product-card-body">
+                                    <div class="product-category">Women's Wellness</div>
+                                    <h5 class="product-name">Feronent LS</h5>
+                                    <p class="product-benefits">Specialized formula for women's nutritional needs and wellness.</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Men's Wellness -->
+                <div class="mb-5">
+                    <h4 class="mb-4"><i class="bi bi-gender-male text-primary"></i> Men's Wellness</h4>
+                    <div class="row">
+                        <div class="col-md-6 col-lg-4 mb-4">
+                            <a href="product-detail.html?product=pusabam-q10-men" class="product-card">
+                                <img src="https://images.unsplash.com/photo-1550572017-edd951b55104?w=600&h=400&fit=crop" alt="Pusabam Q10" class="product-image">
+                                <div class="product-card-body">
+                                    <div class="product-category">Men's Wellness</div>
+                                    <h5 class="product-name">Pusabam Q10</h5>
+                                    <p class="product-benefits">Coenzyme Q10 for men's health, energy, and vitality support.</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Pediatric Nutrition -->
+                <div class="mb-5">
+                    <h4 class="mb-4"><i class="bi bi-heart text-primary"></i> Pediatric Nutrition</h4>
+                    <div class="row">
+                        <div class="col-md-6 col-lg-4 mb-4">
+                            <a href="product-detail.html?product=rebavit-syp-ped" class="product-card">
+                                <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=600&h=400&fit=crop" alt="Rebavit Syp" class="product-image">
+                                <div class="product-card-body">
+                                    <div class="product-category">Pediatric Nutrition</div>
+                                    <h5 class="product-name">Rebavit Syp</h5>
+                                    <p class="product-benefits">Specially formulated for children's nutritional needs and growth support.</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Pharmaceuticals Category -->
+            <div id="pharmaceuticals" class="category-content" style="display: none;">
+                <h3 class="mb-5 text-center">Pharmaceutical Products</h3>
+                
+                <!-- Gastro -->
+                <div class="mb-5">
+                    <h4 class="mb-4"><i class="bi bi-stomach text-primary"></i> Gastro</h4>
+                    <div class="row">
+                        <div class="col-md-6 col-lg-4 mb-4">
+                            <a href="product-detail.html?product=livoreph-s" class="product-card">
+                                <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=600&h=400&fit=crop" alt="Livoreph S" class="product-image">
+                                <div class="product-card-body">
+                                    <div class="product-category">Gastro</div>
+                                    <h5 class="product-name">Livoreph S</h5>
+                                    <p class="product-benefits">Liver support and digestive health management.</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-md-6 col-lg-4 mb-4">
+                            <a href="product-detail.html?product=livoreph-xt" class="product-card">
+                                <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=600&h=400&fit=crop" alt="Livoreph XT" class="product-image">
+                                <div class="product-card-body">
+                                    <div class="product-category">Gastro</div>
+                                    <h5 class="product-name">Livoreph XT</h5>
+                                    <p class="product-benefits">Advanced liver and digestive system support.</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-md-6 col-lg-4 mb-4">
+                            <a href="product-detail.html?product=rebezod-d" class="product-card">
+                                <img src="https://images.unsplash.com/photo-1550572017-edd951b55104?w=600&h=400&fit=crop" alt="Rebezod D" class="product-image">
+                                <div class="product-card-body">
+                                    <div class="product-category">Gastro</div>
+                                    <h5 class="product-name">Rebezod D</h5>
+                                    <p class="product-benefits">Gastrointestinal health and acid management.</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-md-6 col-lg-4 mb-4">
+                            <a href="product-detail.html?product=tudopan-dsr" class="product-card">
+                                <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&h=400&fit=crop" alt="Tudopan DSR" class="product-image">
+                                <div class="product-card-body">
+                                    <div class="product-category">Gastro</div>
+                                    <h5 class="product-name">Tudopan DSR</h5>
+                                    <p class="product-benefits">Delayed-release formulation for gastric protection.</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-md-6 col-lg-4 mb-4">
+                            <a href="product-detail.html?product=rebezod-ls" class="product-card">
+                                <img src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=600&h=400&fit=crop" alt="Rebezod LS" class="product-image">
+                                <div class="product-card-body">
+                                    <div class="product-category">Gastro</div>
+                                    <h5 class="product-name">Rebezod LS</h5>
+                                    <p class="product-benefits">Gastrointestinal comfort and digestive support.</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-md-6 col-lg-4 mb-4">
+                            <a href="product-detail.html?product=puwarbit" class="product-card">
+                                <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=600&h=400&fit=crop" alt="Puwarbit" class="product-image">
+                                <div class="product-card-body">
+                                    <div class="product-category">Gastro</div>
+                                    <h5 class="product-name">Puwarbit</h5>
+                                    <p class="product-benefits">Digestive enzyme and gut health support.</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-md-6 col-lg-4 mb-4">
+                            <a href="product-detail.html?product=lanoson" class="product-card">
+                                <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=600&h=400&fit=crop" alt="Lanoson" class="product-image">
+                                <div class="product-card-body">
+                                    <div class="product-category">Gastro</div>
+                                    <h5 class="product-name">Lanoson</h5>
+                                    <p class="product-benefits">Liver function support and hepatoprotection.</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Ortho -->
+                <div class="mb-5">
+                    <h4 class="mb-4"><i class="bi bi-bone text-primary"></i> Ortho</h4>
+                    <div class="row">
+                        <div class="col-md-6 col-lg-4 mb-4">
+                            <a href="product-detail.html?product=ostoreph-pharma" class="product-card">
+                                <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&h=400&fit=crop" alt="Ostoreph" class="product-image">
+                                <div class="product-card-body">
+                                    <div class="product-category">Ortho</div>
+                                    <h5 class="product-name">Ostoreph</h5>
+                                    <p class="product-benefits">Bone health and orthopedic support.</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-md-6 col-lg-4 mb-4">
+                            <a href="product-detail.html?product=calciblis-pharma" class="product-card">
+                                <img src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=600&h=400&fit=crop" alt="Calciblis" class="product-image">
+                                <div class="product-card-body">
+                                    <div class="product-category">Ortho</div>
+                                    <h5 class="product-name">Calciblis</h5>
+                                    <p class="product-benefits">Calcium and bone strength support.</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Respiratory & Pulmonology -->
+                <div class="mb-5">
+                    <h4 class="mb-4"><i class="bi bi-lungs text-primary"></i> Respiratory & Pulmonology</h4>
+                    <div class="row">
+                        <div class="col-md-6 col-lg-4 mb-4">
+                            <a href="product-detail.html?product=montireph-lc" class="product-card">
+                                <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=600&h=400&fit=crop" alt="Montireph LC" class="product-image">
+                                <div class="product-card-body">
+                                    <div class="product-category">Respiratory & Pulmonology</div>
+                                    <h5 class="product-name">Montireph LC</h5>
+                                    <p class="product-benefits">Respiratory health and lung function support.</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-md-6 col-lg-4 mb-4">
+                            <a href="product-detail.html?product=montireph-lc-jr" class="product-card">
+                                <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=600&h=400&fit=crop" alt="Montireph LC Jr" class="product-image">
+                                <div class="product-card-body">
+                                    <div class="product-category">Respiratory & Pulmonology</div>
+                                    <h5 class="product-name">Montireph LC Jr</h5>
+                                    <p class="product-benefits">Pediatric respiratory health support.</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-md-6 col-lg-4 mb-4">
+                            <a href="product-detail.html?product=pusalo-bm" class="product-card">
+                                <img src="https://images.unsplash.com/photo-1550572017-edd951b55104?w=600&h=400&fit=crop" alt="Pusalo BM" class="product-image">
+                                <div class="product-card-body">
+                                    <div class="product-category">Respiratory & Pulmonology</div>
+                                    <h5 class="product-name">Pusalo BM</h5>
+                                    <p class="product-benefits">Bronchial management and respiratory relief.</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-md-6 col-lg-4 mb-4">
+                            <a href="product-detail.html?product=tudokof-dx" class="product-card">
+                                <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&h=400&fit=crop" alt="Tudokof DX" class="product-image">
+                                <div class="product-card-body">
+                                    <div class="product-category">Respiratory & Pulmonology</div>
+                                    <h5 class="product-name">Tudokof DX</h5>
+                                    <p class="product-benefits">Cough and respiratory symptom management.</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-md-6 col-lg-4 mb-4">
+                            <a href="product-detail.html?product=tudokof-ls" class="product-card">
+                                <img src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=600&h=400&fit=crop" alt="Tudokof LS" class="product-image">
+                                <div class="product-card-body">
+                                    <div class="product-category">Respiratory & Pulmonology</div>
+                                    <h5 class="product-name">Tudokof LS</h5>
+                                    <p class="product-benefits">Long-acting cough and respiratory support.</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Antibiotics -->
+                <div class="mb-5">
+                    <h4 class="mb-4"><i class="bi bi-shield-check text-primary"></i> Antibiotics</h4>
+                    <div class="row">
+                        <div class="col-md-6 col-lg-4 mb-4">
+                            <a href="product-detail.html?product=obioreph-ms" class="product-card">
+                                <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=600&h=400&fit=crop" alt="Obioreph MS" class="product-image">
+                                <div class="product-card-body">
+                                    <div class="product-category">Antibiotics</div>
+                                    <h5 class="product-name">Obioreph MS</h5>
+                                    <p class="product-benefits">Broad-spectrum antibiotic for bacterial infections.</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-md-6 col-lg-4 mb-4">
+                            <a href="product-detail.html?product=obioreph-oz" class="product-card">
+                                <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=600&h=400&fit=crop" alt="Obioreph OZ" class="product-image">
+                                <div class="product-card-body">
+                                    <div class="product-category">Antibiotics</div>
+                                    <h5 class="product-name">Obioreph OZ</h5>
+                                    <p class="product-benefits">Combination antibiotic for effective treatment.</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-md-6 col-lg-4 mb-4">
+                            <a href="product-detail.html?product=pusaclav-625" class="product-card">
+                                <img src="https://images.unsplash.com/photo-1550572017-edd951b55104?w=600&h=400&fit=crop" alt="Pusaclav 625" class="product-image">
+                                <div class="product-card-body">
+                                    <div class="product-category">Antibiotics</div>
+                                    <h5 class="product-name">Pusaclav 625</h5>
+                                    <p class="product-benefits">Amoxicillin-clavulanate combination therapy.</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-md-6 col-lg-4 mb-4">
+                            <a href="product-detail.html?product=pusapod-cv" class="product-card">
+                                <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&h=400&fit=crop" alt="Pusapod CV" class="product-image">
+                                <div class="product-card-body">
+                                    <div class="product-category">Antibiotics</div>
+                                    <h5 class="product-name">Pusapod CV</h5>
+                                    <p class="product-benefits">Cephalosporin antibiotic for bacterial infections.</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-md-6 col-lg-4 mb-4">
+                            <a href="product-detail.html?product=pusapod-cv-jr" class="product-card">
+                                <img src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=600&h=400&fit=crop" alt="Pusapod CV Jr" class="product-image">
+                                <div class="product-card-body">
+                                    <div class="product-category">Antibiotics</div>
+                                    <h5 class="product-name">Pusapod CV Jr</h5>
+                                    <p class="product-benefits">Pediatric antibiotic formulation.</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Pain Management -->
+                <div class="mb-5">
+                    <h4 class="mb-4"><i class="bi bi-heart-pulse text-primary"></i> Pain Management</h4>
+                    <div class="row">
+                        <div class="col-md-6 col-lg-4 mb-4">
+                            <a href="product-detail.html?product=pusadol-sp" class="product-card">
+                                <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=600&h=400&fit=crop" alt="Pusadol SP" class="product-image">
+                                <div class="product-card-body">
+                                    <div class="product-category">Pain Management</div>
+                                    <h5 class="product-name">Pusadol SP</h5>
+                                    <p class="product-benefits">Effective pain relief and management.</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Dermatology -->
+                <div class="mb-5">
+                    <h4 class="mb-4"><i class="bi bi-droplet text-primary"></i> Dermatology</h4>
+                    <div class="row">
+                        <div class="col-md-6 col-lg-4 mb-4">
+                            <a href="product-detail.html?product=mupizen" class="product-card">
+                                <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=600&h=400&fit=crop" alt="Mupizen" class="product-image">
+                                <div class="product-card-body">
+                                    <div class="product-category">Dermatology</div>
+                                    <h5 class="product-name">Mupizen</h5>
+                                    <p class="product-benefits">Topical treatment for skin conditions.</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Gynae -->
+                <div class="mb-5">
+                    <h4 class="mb-4"><i class="bi bi-gender-female text-primary"></i> Gynae</h4>
+                    <div class="row">
+                        <div class="col-md-6 col-lg-4 mb-4">
+                            <a href="product-detail.html?product=femaguterone-d" class="product-card">
+                                <img src="https://images.unsplash.com/photo-1550572017-edd951b55104?w=600&h=400&fit=crop" alt="Femaguterone D" class="product-image">
+                                <div class="product-card-body">
+                                    <div class="product-category">Gynae</div>
+                                    <h5 class="product-name">Femaguterone D</h5>
+                                    <p class="product-benefits">Women's health and gynecological support.</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-md-6 col-lg-4 mb-4">
+                            <a href="product-detail.html?product=pusabtam-q10" class="product-card">
+                                <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&h=400&fit=crop" alt="Pusabtam Q10" class="product-image">
+                                <div class="product-card-body">
+                                    <div class="product-category">Gynae</div>
+                                    <h5 class="product-name">Pusabtam Q10</h5>
+                                    <p class="product-benefits">Coenzyme Q10 for women's wellness.</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-md-6 col-lg-4 mb-4">
+                            <a href="product-detail.html?product=feronext-ls" class="product-card">
+                                <img src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=600&h=400&fit=crop" alt="Feronext LS" class="product-image">
+                                <div class="product-card-body">
+                                    <div class="product-category">Gynae</div>
+                                    <h5 class="product-name">Feronext LS</h5>
+                                    <p class="product-benefits">Specialized gynecological health support.</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Pediatrics -->
+                <div class="mb-5">
+                    <h4 class="mb-4"><i class="bi bi-heart text-primary"></i> Pediatrics</h4>
+                    <div class="row">
+                        <div class="col-md-6 col-lg-4 mb-4">
+                            <a href="product-detail.html?product=lanozen" class="product-card">
+                                <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=600&h=400&fit=crop" alt="Lanozen" class="product-image">
+                                <div class="product-card-body">
+                                    <div class="product-category">Pediatrics</div>
+                                    <h5 class="product-name">Lanozen</h5>
+                                    <p class="product-benefits">Pediatric liver and digestive support.</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <h5><i class="bi bi-capsule"></i> Pushyati®</h5>
+                    <p>Trusted third-party pharma manufacturer with modern infrastructure focused on both nutraceutical and pharmaceutical formulations.</p>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="partners.html">Manufacturing Partners</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="career.html">Career</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h5>Contact Info</h5>
+                    <p class="small">
+                        <i class="bi bi-envelope"></i> pushyati@pushyati.com<br>
+                        <i class="bi bi-telephone"></i> +91 95572 84555
+                    </p>
+                </div>
+            </div>
+            <hr class="my-4" style="border-color: #444;">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p>&copy; 2024 Pushyati® Pvt. Ltd. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Category Toggle Function
+        function showCategory(category) {
+            document.querySelectorAll('.category-content').forEach(content => {
+                content.style.display = 'none';
+            });
+            document.querySelectorAll('.category-tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            document.getElementById(category).style.display = 'block';
+            event.target.classList.add('active');
+        }
+        
+        // Check URL parameter for category
+        const urlParams = new URLSearchParams(window.location.search);
+        const category = urlParams.get('category');
+        if (category === 'pharmaceuticals') {
+            showCategory('pharmaceuticals');
+            document.querySelectorAll('.category-tab').forEach(tab => {
+                if (tab.textContent.includes('Pharmaceuticals')) {
+                    tab.classList.add('active');
+                } else {
+                    tab.classList.remove('active');
+                }
+            });
+        }
+    </script>
+</body>
+</html>
+

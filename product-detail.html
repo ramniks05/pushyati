@@ -1,0 +1,1013 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details - Pushyati®</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="bi bi-capsule"></i> Pushyati®
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="partners.html">Partners</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="products.html">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="career.html">Career</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Product Detail Hero -->
+    <div class="product-detail-hero" style="background: linear-gradient(135deg, #0066cc, #003d7a);">
+        <div style="position: absolute; top: 0; right: 0; width: 40%; height: 100%; background-image: url('https://via.placeholder.com/600x800/0066cc/ffffff?text=Product'); background-size: cover; background-position: center; opacity: 0.2; z-index: 1;"></div>
+        <div class="container" style="position: relative; z-index: 2;">
+            <nav aria-label="breadcrumb" class="breadcrumb-custom mb-4">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item"><a href="products.html">Products</a></li>
+                    <li class="breadcrumb-item active" id="breadcrumb-category">Product</li>
+                </ol>
+            </nav>
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="display-4 fw-bold mb-3" id="product-name">Product Name</h1>
+                    <p class="lead" id="product-category-badge"></p>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <img id="product-main-image" src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=600&h=400&fit=crop" alt="Product" class="product-detail-image">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Product Details -->
+    <section class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <!-- Description -->
+                    <div class="detail-section">
+                        <h3><i class="bi bi-info-circle text-primary"></i> Description</h3>
+                        <p id="product-description" class="lead"></p>
+                        <p id="product-description-detail"></p>
+                    </div>
+                    
+                    <!-- Uses -->
+                    <div class="detail-section">
+                        <h3><i class="bi bi-clipboard-check text-primary"></i> Uses</h3>
+                        <ul id="product-uses"></ul>
+                    </div>
+                    
+                    <!-- Benefits -->
+                    <div class="detail-section">
+                        <h3><i class="bi bi-heart-pulse text-primary"></i> Benefits</h3>
+                        <ul id="product-benefits"></ul>
+                    </div>
+                    
+                    <!-- Composition -->
+                    <div class="detail-section">
+                        <h3><i class="bi bi-flask text-primary"></i> Composition</h3>
+                        <p id="product-composition"></p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4">
+                    <!-- Product Info Card -->
+                    <div class="detail-section">
+                        <h4 class="mb-4">Product Information</h4>
+                        <div class="mb-3">
+                            <strong>Category:</strong><br>
+                            <span id="product-category-info" class="badge-custom"></span>
+                        </div>
+                        <div class="mb-3">
+                            <strong>Dosage Form:</strong><br>
+                            <span id="product-dosage"></span>
+                        </div>
+                        <div class="mb-3">
+                            <strong>Pack Size:</strong><br>
+                            <span id="product-pack"></span>
+                        </div>
+                        <div class="mb-3">
+                            <strong>Storage:</strong><br>
+                            <span id="product-storage"></span>
+                        </div>
+                        <hr>
+                        <div class="text-center">
+                            <a href="contact.html" class="btn btn-primary w-100">
+                                <i class="bi bi-envelope"></i> Inquire About This Product
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Related Products -->
+                    <div class="detail-section">
+                        <h4 class="mb-4">Related Products</h4>
+                        <div class="list-group">
+                            <a href="products.html" class="list-group-item list-group-item-action">
+                                <i class="bi bi-arrow-right"></i> View All Products
+                            </a>
+                            <a href="products.html?category=nutraceuticals" class="list-group-item list-group-item-action">
+                                <i class="bi bi-capsule"></i> Nutraceuticals
+                            </a>
+                            <a href="products.html?category=pharmaceuticals" class="list-group-item list-group-item-action">
+                                <i class="bi bi-capsule-pill"></i> Pharmaceuticals
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <h5><i class="bi bi-capsule"></i> Pushyati®</h5>
+                    <p>Trusted third-party pharma manufacturer with modern infrastructure focused on both nutraceutical and pharmaceutical formulations.</p>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="partners.html">Manufacturing Partners</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="career.html">Career</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h5>Contact Info</h5>
+                    <p class="small">
+                        <i class="bi bi-envelope"></i> pushyati@pushyati.com<br>
+                        <i class="bi bi-telephone"></i> +91 95572 84555
+                    </p>
+                </div>
+            </div>
+            <hr class="my-4" style="border-color: #444;">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p>&copy; 2024 Pushyati® Pvt. Ltd. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Product database
+        const products = {
+            'rebavit-cap': {
+                name: 'Rebavit Cap',
+                category: 'General Wellness & Immunity',
+                image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=600&h=400&fit=crop',
+                description: 'Rebavit Cap is a comprehensive nutritional supplement designed to support general wellness and boost immunity.',
+                descriptionDetail: 'This advanced formulation combines essential vitamins, minerals, and immune-boosting ingredients to help maintain optimal health and strengthen the body\'s natural defense mechanisms.',
+                uses: [
+                    'Supports immune system function',
+                    'Provides essential vitamins and minerals',
+                    'Helps maintain overall wellness',
+                    'Supports energy levels and vitality'
+                ],
+                benefits: [
+                    'Enhanced immune response',
+                    'Improved energy levels',
+                    'Better overall health maintenance',
+                    'Protection against nutritional deficiencies'
+                ],
+                composition: 'Contains Vitamin C, Vitamin D, Zinc, and other essential micronutrients in optimal ratios.',
+                dosage: 'Capsules',
+                pack: '10x10 Strips',
+                storage: 'Store in a cool, dry place below 30°C'
+            },
+            'rebavit-syp': {
+                name: 'Rebavit Syp',
+                category: 'General Wellness & Immunity / Pediatric Nutrition',
+                image: 'https://images.unsplash.com/photo-1550572017-edd951b55104?w=600&h=400&fit=crop',
+                description: 'Rebavit Syp is a liquid formulation designed for enhanced immunity and overall wellness support, suitable for both adults and children.',
+                descriptionDetail: 'This palatable syrup formulation provides essential nutrients in an easy-to-consume liquid form, making it ideal for pediatric use and adults who prefer liquid supplements.',
+                uses: [
+                    'Pediatric nutritional support',
+                    'General wellness maintenance',
+                    'Immune system enhancement',
+                    'Growth and development support in children'
+                ],
+                benefits: [
+                    'Easy administration for children',
+                    'Rapid absorption',
+                    'Comprehensive nutritional support',
+                    'Pleasant taste for better compliance'
+                ],
+                composition: 'Contains essential vitamins, minerals, and immune-supporting nutrients in liquid form.',
+                dosage: 'Syrup',
+                pack: '100ml / 200ml',
+                storage: 'Store in a cool, dry place. Refrigerate after opening.'
+            },
+            'calciblis': {
+                name: 'Calciblis',
+                category: 'Bone & Joint Health',
+                image: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&h=400&fit=crop',
+                description: 'Calciblis is a specialized formulation designed to promote bone strength and joint health with essential calcium and minerals.',
+                descriptionDetail: 'This comprehensive bone health supplement provides optimal levels of calcium, vitamin D, and other essential minerals necessary for maintaining strong bones and healthy joints.',
+                uses: [
+                    'Bone health maintenance',
+                    'Osteoporosis prevention and management',
+                    'Joint health support',
+                    'Calcium and mineral supplementation'
+                ],
+                benefits: [
+                    'Improved bone density',
+                    'Enhanced calcium absorption',
+                    'Joint mobility support',
+                    'Reduced risk of fractures'
+                ],
+                composition: 'Contains Calcium Carbonate, Vitamin D3, Magnesium, and other bone-supporting minerals.',
+                dosage: 'Tablets',
+                pack: '10x10 Strips',
+                storage: 'Store in a cool, dry place below 30°C'
+            },
+            'ostoreph': {
+                name: 'Ostoreph',
+                category: 'Bone & Joint Health',
+                image: 'https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=600&h=400&fit=crop',
+                description: 'Ostoreph is an advanced formula for bone density and joint mobility support.',
+                descriptionDetail: 'This premium formulation combines scientifically proven ingredients to support bone health and maintain joint flexibility and mobility.',
+                uses: [
+                    'Bone density improvement',
+                    'Joint mobility enhancement',
+                    'Arthritis support',
+                    'Post-fracture recovery'
+                ],
+                benefits: [
+                    'Enhanced bone strength',
+                    'Improved joint flexibility',
+                    'Reduced joint discomfort',
+                    'Better mobility and function'
+                ],
+                composition: 'Contains Calcium, Vitamin D3, Glucosamine, and Chondroitin in optimal ratios.',
+                dosage: 'Tablets',
+                pack: '10x10 Strips',
+                storage: 'Store in a cool, dry place below 30°C'
+            },
+            'livoreph-xt-nutra': {
+                name: 'Livoreph XT',
+                category: 'Digestive & Liver Health',
+                image: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=600&h=400&fit=crop',
+                description: 'Livoreph XT supports liver function and digestive health with natural ingredients.',
+                descriptionDetail: 'This specialized formulation combines hepatoprotective and digestive support ingredients to maintain optimal liver and digestive system function.',
+                uses: [
+                    'Liver function support',
+                    'Digestive health maintenance',
+                    'Hepatoprotection',
+                    'Digestive enzyme support'
+                ],
+                benefits: [
+                    'Improved liver function',
+                    'Better digestion',
+                    'Reduced digestive discomfort',
+                    'Enhanced nutrient absorption'
+                ],
+                composition: 'Contains natural liver-supporting ingredients and digestive enzymes.',
+                dosage: 'Tablets / Syrup',
+                pack: '10x10 Strips / 100ml',
+                storage: 'Store in a cool, dry place below 30°C'
+            },
+            'pusabam-q10': {
+                name: 'Pusabam Q10',
+                category: 'Women\'s Wellness',
+                image: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=600&h=400&fit=crop',
+                description: 'Pusabam Q10 is a Coenzyme Q10 formulation for women\'s health and wellness.',
+                descriptionDetail: 'This specialized supplement provides Coenzyme Q10, an essential nutrient that supports cellular energy production and overall wellness in women.',
+                uses: [
+                    'Women\'s health support',
+                    'Energy enhancement',
+                    'Cardiovascular health',
+                    'Antioxidant support'
+                ],
+                benefits: [
+                    'Improved energy levels',
+                    'Enhanced cellular function',
+                    'Cardiovascular support',
+                    'Antioxidant protection'
+                ],
+                composition: 'Contains Coenzyme Q10 (Ubiquinone) in optimal dosage.',
+                dosage: 'Capsules',
+                pack: '10x10 Strips',
+                storage: 'Store in a cool, dry place below 25°C'
+            },
+            'feronent-ls': {
+                name: 'Feronent LS',
+                category: 'Women\'s Wellness',
+                image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=600&h=400&fit=crop',
+                description: 'Feronent LS is a specialized formula for women\'s nutritional needs and wellness.',
+                descriptionDetail: 'This comprehensive formulation addresses the unique nutritional requirements of women, supporting overall health and wellness.',
+                uses: [
+                    'Women\'s nutritional support',
+                    'Iron supplementation',
+                    'General wellness',
+                    'Hormonal balance support'
+                ],
+                benefits: [
+                    'Improved iron levels',
+                    'Enhanced energy',
+                    'Better overall health',
+                    'Hormonal balance support'
+                ],
+                composition: 'Contains Iron, Folic Acid, Vitamin B12, and other essential nutrients.',
+                dosage: 'Tablets',
+                pack: '10x10 Strips',
+                storage: 'Store in a cool, dry place below 30°C'
+            },
+            'pusabam-q10-men': {
+                name: 'Pusabam Q10',
+                category: 'Men\'s Wellness',
+                image: 'https://images.unsplash.com/photo-1550572017-edd951b55104?w=600&h=400&fit=crop',
+                description: 'Pusabam Q10 for men\'s health, energy, and vitality support.',
+                descriptionDetail: 'This specialized Coenzyme Q10 formulation is designed to support men\'s health, enhance energy levels, and promote overall vitality.',
+                uses: [
+                    'Men\'s health support',
+                    'Energy enhancement',
+                    'Cardiovascular health',
+                    'Physical performance support'
+                ],
+                benefits: [
+                    'Increased energy levels',
+                    'Improved cardiovascular function',
+                    'Enhanced physical performance',
+                    'Better overall vitality'
+                ],
+                composition: 'Contains Coenzyme Q10 (Ubiquinone) in optimal dosage for men.',
+                dosage: 'Capsules',
+                pack: '10x10 Strips',
+                storage: 'Store in a cool, dry place below 25°C'
+            },
+            'rebavit-syp-ped': {
+                name: 'Rebavit Syp',
+                category: 'Pediatric Nutrition',
+                image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=600&h=400&fit=crop',
+                description: 'Specially formulated for children\'s nutritional needs and growth support.',
+                descriptionDetail: 'This pediatric formulation provides essential nutrients in a child-friendly liquid form, supporting healthy growth and development.',
+                uses: [
+                    'Pediatric nutritional support',
+                    'Growth and development',
+                    'Immune system support in children',
+                    'Nutritional deficiency prevention'
+                ],
+                benefits: [
+                    'Supports healthy growth',
+                    'Enhanced immune function',
+                    'Better nutritional status',
+                    'Pleasant taste for children'
+                ],
+                composition: 'Contains essential vitamins, minerals, and nutrients in pediatric-appropriate dosages.',
+                dosage: 'Syrup',
+                pack: '100ml / 200ml',
+                storage: 'Store in a cool, dry place. Refrigerate after opening.'
+            },
+            'livoreph-s': {
+                name: 'Livoreph S',
+                category: 'Gastro',
+                image: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=600&h=400&fit=crop',
+                description: 'Livoreph S provides liver support and digestive health management.',
+                descriptionDetail: 'This pharmaceutical formulation is designed to support liver function and maintain digestive health through proven active ingredients.',
+                uses: [
+                    'Liver function support',
+                    'Digestive health management',
+                    'Hepatoprotection',
+                    'Digestive disorder treatment'
+                ],
+                benefits: [
+                    'Improved liver function',
+                    'Better digestive health',
+                    'Reduced liver stress',
+                    'Enhanced digestive comfort'
+                ],
+                composition: 'Contains hepatoprotective and digestive support active ingredients.',
+                dosage: 'Tablets',
+                pack: '10x10 Strips',
+                storage: 'Store in a cool, dry place below 30°C'
+            },
+            'livoreph-xt': {
+                name: 'Livoreph XT',
+                category: 'Gastro',
+                image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=600&h=400&fit=crop',
+                description: 'Advanced liver and digestive system support.',
+                descriptionDetail: 'This advanced formulation provides comprehensive support for liver function and digestive system health.',
+                uses: [
+                    'Advanced liver support',
+                    'Digestive system health',
+                    'Hepatoprotection',
+                    'Digestive enzyme support'
+                ],
+                benefits: [
+                    'Enhanced liver function',
+                    'Improved digestion',
+                    'Better nutrient absorption',
+                    'Reduced digestive discomfort'
+                ],
+                composition: 'Contains advanced hepatoprotective and digestive support compounds.',
+                dosage: 'Tablets / Syrup',
+                pack: '10x10 Strips / 100ml',
+                storage: 'Store in a cool, dry place below 30°C'
+            },
+            'rebezod-d': {
+                name: 'Rebezod D',
+                category: 'Gastro',
+                image: 'https://images.unsplash.com/photo-1550572017-edd951b55104?w=600&h=400&fit=crop',
+                description: 'Gastrointestinal health and acid management.',
+                descriptionDetail: 'This formulation helps manage gastrointestinal health and control acid-related issues.',
+                uses: [
+                    'Acid reflux management',
+                    'Gastric ulcer treatment',
+                    'Gastrointestinal health',
+                    'Acid control'
+                ],
+                benefits: [
+                    'Reduced acid reflux',
+                    'Better gastric health',
+                    'Improved digestion',
+                    'Reduced gastric discomfort'
+                ],
+                composition: 'Contains acid-reducing and gastrointestinal support active ingredients.',
+                dosage: 'Tablets',
+                pack: '10x10 Strips',
+                storage: 'Store in a cool, dry place below 30°C'
+            },
+            'tudopan-dsr': {
+                name: 'Tudopan DSR',
+                category: 'Gastro',
+                image: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&h=400&fit=crop',
+                description: 'Delayed-release formulation for gastric protection.',
+                descriptionDetail: 'This delayed-release formulation provides targeted gastric protection and acid management.',
+                uses: [
+                    'Gastric protection',
+                    'Acid-related disorders',
+                    'Gastric ulcer treatment',
+                    'GERD management'
+                ],
+                benefits: [
+                    'Targeted gastric protection',
+                    'Sustained release action',
+                    'Reduced gastric irritation',
+                    'Better acid control'
+                ],
+                composition: 'Contains delayed-release gastric protective active ingredients.',
+                dosage: 'Tablets (Delayed Release)',
+                pack: '10x10 Strips',
+                storage: 'Store in a cool, dry place below 30°C'
+            },
+            'rebezod-ls': {
+                name: 'Rebezod LS',
+                category: 'Gastro',
+                image: 'https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=600&h=400&fit=crop',
+                description: 'Gastrointestinal comfort and digestive support.',
+                descriptionDetail: 'This formulation provides comprehensive gastrointestinal comfort and digestive system support.',
+                uses: [
+                    'Digestive comfort',
+                    'Gastrointestinal support',
+                    'Digestive disorder management',
+                    'Gut health maintenance'
+                ],
+                benefits: [
+                    'Improved digestive comfort',
+                    'Better gut health',
+                    'Reduced digestive issues',
+                    'Enhanced nutrient absorption'
+                ],
+                composition: 'Contains gastrointestinal support and digestive aid compounds.',
+                dosage: 'Tablets',
+                pack: '10x10 Strips',
+                storage: 'Store in a cool, dry place below 30°C'
+            },
+            'puwarbit': {
+                name: 'Puwarbit',
+                category: 'Gastro',
+                image: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=600&h=400&fit=crop',
+                description: 'Digestive enzyme and gut health support.',
+                descriptionDetail: 'This formulation provides digestive enzymes and supports overall gut health.',
+                uses: [
+                    'Digestive enzyme support',
+                    'Gut health maintenance',
+                    'Digestive aid',
+                    'Enzyme deficiency management'
+                ],
+                benefits: [
+                    'Improved digestion',
+                    'Better nutrient absorption',
+                    'Reduced digestive discomfort',
+                    'Enhanced gut health'
+                ],
+                composition: 'Contains digestive enzymes and gut-supporting ingredients.',
+                dosage: 'Tablets',
+                pack: '10x10 Strips',
+                storage: 'Store in a cool, dry place below 30°C'
+            },
+            'lanoson': {
+                name: 'Lanoson',
+                category: 'Gastro',
+                image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=600&h=400&fit=crop',
+                description: 'Liver function support and hepatoprotection.',
+                descriptionDetail: 'This specialized formulation supports liver function and provides hepatoprotective benefits.',
+                uses: [
+                    'Liver function support',
+                    'Hepatoprotection',
+                    'Liver health maintenance',
+                    'Liver disorder management'
+                ],
+                benefits: [
+                    'Improved liver function',
+                    'Liver protection',
+                    'Enhanced liver health',
+                    'Reduced liver stress'
+                ],
+                composition: 'Contains hepatoprotective active ingredients.',
+                dosage: 'Tablets / Syrup',
+                pack: '10x10 Strips / 100ml',
+                storage: 'Store in a cool, dry place below 30°C'
+            },
+            'ostoreph-pharma': {
+                name: 'Ostoreph',
+                category: 'Ortho',
+                image: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&h=400&fit=crop',
+                description: 'Bone health and orthopedic support.',
+                descriptionDetail: 'This pharmaceutical formulation supports bone health and provides orthopedic benefits.',
+                uses: [
+                    'Bone health support',
+                    'Orthopedic conditions',
+                    'Osteoporosis management',
+                    'Bone strength improvement'
+                ],
+                benefits: [
+                    'Improved bone density',
+                    'Enhanced bone strength',
+                    'Better orthopedic health',
+                    'Reduced fracture risk'
+                ],
+                composition: 'Contains bone-supporting active pharmaceutical ingredients.',
+                dosage: 'Tablets',
+                pack: '10x10 Strips',
+                storage: 'Store in a cool, dry place below 30°C'
+            },
+            'calciblis-pharma': {
+                name: 'Calciblis',
+                category: 'Ortho',
+                image: 'https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=600&h=400&fit=crop',
+                description: 'Calcium and bone strength support.',
+                descriptionDetail: 'This formulation provides essential calcium and supports bone strength.',
+                uses: [
+                    'Calcium supplementation',
+                    'Bone strength support',
+                    'Osteoporosis prevention',
+                    'Bone health maintenance'
+                ],
+                benefits: [
+                    'Improved calcium levels',
+                    'Enhanced bone strength',
+                    'Better bone health',
+                    'Reduced bone loss'
+                ],
+                composition: 'Contains Calcium and bone-supporting active ingredients.',
+                dosage: 'Tablets',
+                pack: '10x10 Strips',
+                storage: 'Store in a cool, dry place below 30°C'
+            },
+            'montireph-lc': {
+                name: 'Montireph LC',
+                category: 'Respiratory & Pulmonology',
+                image: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=600&h=400&fit=crop',
+                description: 'Respiratory health and lung function support.',
+                descriptionDetail: 'This formulation supports respiratory health and maintains optimal lung function.',
+                uses: [
+                    'Respiratory health support',
+                    'Lung function maintenance',
+                    'Asthma management',
+                    'Respiratory disorder treatment'
+                ],
+                benefits: [
+                    'Improved breathing',
+                    'Better lung function',
+                    'Reduced respiratory symptoms',
+                    'Enhanced respiratory health'
+                ],
+                composition: 'Contains respiratory support active ingredients.',
+                dosage: 'Tablets / Syrup',
+                pack: '10x10 Strips / 100ml',
+                storage: 'Store in a cool, dry place below 30°C'
+            },
+            'montireph-lc-jr': {
+                name: 'Montireph LC Jr',
+                category: 'Respiratory & Pulmonology',
+                image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=600&h=400&fit=crop',
+                description: 'Pediatric respiratory health support.',
+                descriptionDetail: 'This pediatric formulation supports respiratory health in children.',
+                uses: [
+                    'Pediatric respiratory support',
+                    'Childhood asthma management',
+                    'Respiratory health in children',
+                    'Pediatric lung function support'
+                ],
+                benefits: [
+                    'Improved breathing in children',
+                    'Better respiratory health',
+                    'Reduced respiratory symptoms',
+                    'Child-friendly formulation'
+                ],
+                composition: 'Contains pediatric-appropriate respiratory support ingredients.',
+                dosage: 'Syrup',
+                pack: '100ml / 200ml',
+                storage: 'Store in a cool, dry place. Refrigerate after opening.'
+            },
+            'pusalo-bm': {
+                name: 'Pusalo BM',
+                category: 'Respiratory & Pulmonology',
+                image: 'https://images.unsplash.com/photo-1550572017-edd951b55104?w=600&h=400&fit=crop',
+                description: 'Bronchial management and respiratory relief.',
+                descriptionDetail: 'This formulation provides effective bronchial management and respiratory symptom relief.',
+                uses: [
+                    'Bronchial management',
+                    'Respiratory symptom relief',
+                    'Bronchitis treatment',
+                    'Respiratory comfort'
+                ],
+                benefits: [
+                    'Improved bronchial function',
+                    'Reduced respiratory symptoms',
+                    'Better breathing comfort',
+                    'Enhanced respiratory relief'
+                ],
+                composition: 'Contains bronchial support and respiratory relief active ingredients.',
+                dosage: 'Tablets / Syrup',
+                pack: '10x10 Strips / 100ml',
+                storage: 'Store in a cool, dry place below 30°C'
+            },
+            'tudokof-dx': {
+                name: 'Tudokof DX',
+                category: 'Respiratory & Pulmonology',
+                image: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&h=400&fit=crop',
+                description: 'Cough and respiratory symptom management.',
+                descriptionDetail: 'This formulation effectively manages cough and other respiratory symptoms.',
+                uses: [
+                    'Cough management',
+                    'Respiratory symptom relief',
+                    'Cough suppression',
+                    'Respiratory comfort'
+                ],
+                benefits: [
+                    'Effective cough relief',
+                    'Reduced respiratory symptoms',
+                    'Better breathing comfort',
+                    'Improved respiratory function'
+                ],
+                composition: 'Contains cough suppressant and respiratory support active ingredients.',
+                dosage: 'Tablets / Syrup',
+                pack: '10x10 Strips / 100ml',
+                storage: 'Store in a cool, dry place below 30°C'
+            },
+            'tudokof-ls': {
+                name: 'Tudokof LS',
+                category: 'Respiratory & Pulmonology',
+                image: 'https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=600&h=400&fit=crop',
+                description: 'Long-acting cough and respiratory support.',
+                descriptionDetail: 'This long-acting formulation provides sustained cough relief and respiratory support.',
+                uses: [
+                    'Long-acting cough relief',
+                    'Sustained respiratory support',
+                    'Extended cough management',
+                    'Prolonged respiratory comfort'
+                ],
+                benefits: [
+                    'Long-lasting cough relief',
+                    'Sustained respiratory support',
+                    'Reduced dosing frequency',
+                    'Better patient compliance'
+                ],
+                composition: 'Contains long-acting cough suppressant and respiratory support compounds.',
+                dosage: 'Tablets (Sustained Release)',
+                pack: '10x10 Strips',
+                storage: 'Store in a cool, dry place below 30°C'
+            },
+            'obioreph-ms': {
+                name: 'Obioreph MS',
+                category: 'Antibiotics',
+                image: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=600&h=400&fit=crop',
+                description: 'Broad-spectrum antibiotic for bacterial infections.',
+                descriptionDetail: 'This broad-spectrum antibiotic is effective against a wide range of bacterial infections.',
+                uses: [
+                    'Bacterial infection treatment',
+                    'Broad-spectrum antibiotic therapy',
+                    'Infection management',
+                    'Antibacterial treatment'
+                ],
+                benefits: [
+                    'Effective against multiple bacteria',
+                    'Rapid infection control',
+                    'Comprehensive antibacterial action',
+                    'Reliable treatment option'
+                ],
+                composition: 'Contains broad-spectrum antibiotic active ingredient.',
+                dosage: 'Tablets / Capsules',
+                pack: '10x10 Strips',
+                storage: 'Store in a cool, dry place below 30°C'
+            },
+            'obioreph-oz': {
+                name: 'Obioreph OZ',
+                category: 'Antibiotics',
+                image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=600&h=400&fit=crop',
+                description: 'Combination antibiotic for effective treatment.',
+                descriptionDetail: 'This combination antibiotic provides enhanced efficacy against resistant bacterial infections.',
+                uses: [
+                    'Resistant bacterial infection treatment',
+                    'Combination antibiotic therapy',
+                    'Enhanced infection control',
+                    'Complex infection management'
+                ],
+                benefits: [
+                    'Enhanced antibacterial efficacy',
+                    'Effective against resistant strains',
+                    'Comprehensive infection control',
+                    'Reliable treatment outcome'
+                ],
+                composition: 'Contains combination antibiotic active ingredients.',
+                dosage: 'Tablets',
+                pack: '10x10 Strips',
+                storage: 'Store in a cool, dry place below 30°C'
+            },
+            'pusaclav-625': {
+                name: 'Pusaclav 625',
+                category: 'Antibiotics',
+                image: 'https://images.unsplash.com/photo-1550572017-edd951b55104?w=600&h=400&fit=crop',
+                description: 'Amoxicillin-clavulanate combination therapy.',
+                descriptionDetail: 'This combination provides effective treatment for various bacterial infections.',
+                uses: [
+                    'Bacterial infection treatment',
+                    'Amoxicillin-clavulanate therapy',
+                    'Respiratory infections',
+                    'Skin and soft tissue infections'
+                ],
+                benefits: [
+                    'Effective bacterial treatment',
+                    'Broad-spectrum coverage',
+                    'Enhanced efficacy with clavulanate',
+                    'Reliable infection control'
+                ],
+                composition: 'Contains Amoxicillin and Clavulanic Acid.',
+                dosage: 'Tablets',
+                pack: '10x10 Strips',
+                storage: 'Store in a cool, dry place below 30°C'
+            },
+            'pusapod-cv': {
+                name: 'Pusapod CV',
+                category: 'Antibiotics',
+                image: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&h=400&fit=crop',
+                description: 'Cephalosporin antibiotic for bacterial infections.',
+                descriptionDetail: 'This cephalosporin antibiotic provides effective treatment for various bacterial infections.',
+                uses: [
+                    'Bacterial infection treatment',
+                    'Cephalosporin antibiotic therapy',
+                    'Respiratory infections',
+                    'Urinary tract infections'
+                ],
+                benefits: [
+                    'Effective antibacterial action',
+                    'Broad-spectrum coverage',
+                    'Reliable infection treatment',
+                    'Good safety profile'
+                ],
+                composition: 'Contains Cephalosporin antibiotic active ingredient.',
+                dosage: 'Tablets / Capsules',
+                pack: '10x10 Strips',
+                storage: 'Store in a cool, dry place below 30°C'
+            },
+            'pusapod-cv-jr': {
+                name: 'Pusapod CV Jr',
+                category: 'Antibiotics / Pediatrics',
+                image: 'https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=600&h=400&fit=crop',
+                description: 'Pediatric antibiotic formulation.',
+                descriptionDetail: 'This pediatric formulation provides safe and effective antibiotic treatment for children.',
+                uses: [
+                    'Pediatric bacterial infection treatment',
+                    'Childhood infection management',
+                    'Pediatric antibiotic therapy',
+                    'Safe antibiotic treatment for children'
+                ],
+                benefits: [
+                    'Safe for pediatric use',
+                    'Effective infection treatment',
+                    'Child-friendly formulation',
+                    'Reliable pediatric antibiotic'
+                ],
+                composition: 'Contains pediatric-appropriate antibiotic active ingredient.',
+                dosage: 'Syrup',
+                pack: '100ml / 200ml',
+                storage: 'Store in a cool, dry place. Refrigerate after opening.'
+            },
+            'pusadol-sp': {
+                name: 'Pusadol SP',
+                category: 'Pain Management',
+                image: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=600&h=400&fit=crop',
+                description: 'Effective pain relief and management.',
+                descriptionDetail: 'This formulation provides effective pain relief for various pain conditions.',
+                uses: [
+                    'Pain relief',
+                    'Pain management',
+                    'Analgesic therapy',
+                    'Pain control'
+                ],
+                benefits: [
+                    'Effective pain relief',
+                    'Rapid pain control',
+                    'Improved comfort',
+                    'Better quality of life'
+                ],
+                composition: 'Contains analgesic active ingredients.',
+                dosage: 'Tablets',
+                pack: '10x10 Strips',
+                storage: 'Store in a cool, dry place below 30°C'
+            },
+            'mupizen': {
+                name: 'Mupizen',
+                category: 'Dermatology',
+                image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=600&h=400&fit=crop',
+                description: 'Topical treatment for skin conditions.',
+                descriptionDetail: 'This topical formulation provides effective treatment for various skin conditions.',
+                uses: [
+                    'Skin condition treatment',
+                    'Topical therapy',
+                    'Dermatological treatment',
+                    'Skin infection management'
+                ],
+                benefits: [
+                    'Effective skin treatment',
+                    'Topical application',
+                    'Targeted action',
+                    'Improved skin health'
+                ],
+                composition: 'Contains topical antimicrobial active ingredient.',
+                dosage: 'Ointment / Cream',
+                pack: '15gm / 30gm',
+                storage: 'Store in a cool, dry place below 30°C'
+            },
+            'femaguterone-d': {
+                name: 'Femaguterone D',
+                category: 'Gynae',
+                image: 'https://images.unsplash.com/photo-1550572017-edd951b55104?w=600&h=400&fit=crop',
+                description: 'Women\'s health and gynecological support.',
+                descriptionDetail: 'This formulation provides comprehensive support for women\'s health and gynecological conditions.',
+                uses: [
+                    'Women\'s health support',
+                    'Gynecological condition treatment',
+                    'Hormonal support',
+                    'Women\'s wellness'
+                ],
+                benefits: [
+                    'Improved women\'s health',
+                    'Gynecological support',
+                    'Hormonal balance',
+                    'Better wellness'
+                ],
+                composition: 'Contains women\'s health and gynecological support active ingredients.',
+                dosage: 'Tablets',
+                pack: '10x10 Strips',
+                storage: 'Store in a cool, dry place below 30°C'
+            },
+            'pusabtam-q10': {
+                name: 'Pusabtam Q10',
+                category: 'Gynae',
+                image: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&h=400&fit=crop',
+                description: 'Coenzyme Q10 for women\'s wellness.',
+                descriptionDetail: 'This Coenzyme Q10 formulation supports women\'s wellness and overall health.',
+                uses: [
+                    'Women\'s wellness support',
+                    'Energy enhancement',
+                    'Cardiovascular health',
+                    'Antioxidant support'
+                ],
+                benefits: [
+                    'Improved energy levels',
+                    'Enhanced wellness',
+                    'Cardiovascular support',
+                    'Antioxidant protection'
+                ],
+                composition: 'Contains Coenzyme Q10 (Ubiquinone) for women.',
+                dosage: 'Capsules',
+                pack: '10x10 Strips',
+                storage: 'Store in a cool, dry place below 25°C'
+            },
+            'feronext-ls': {
+                name: 'Feronext LS',
+                category: 'Gynae',
+                image: 'https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=600&h=400&fit=crop',
+                description: 'Specialized gynecological health support.',
+                descriptionDetail: 'This specialized formulation provides targeted support for gynecological health.',
+                uses: [
+                    'Gynecological health support',
+                    'Women\'s health maintenance',
+                    'Hormonal balance',
+                    'Gynecological condition management'
+                ],
+                benefits: [
+                    'Improved gynecological health',
+                    'Better hormonal balance',
+                    'Enhanced women\'s wellness',
+                    'Targeted health support'
+                ],
+                composition: 'Contains specialized gynecological health support ingredients.',
+                dosage: 'Tablets',
+                pack: '10x10 Strips',
+                storage: 'Store in a cool, dry place below 30°C'
+            },
+            'lanozen': {
+                name: 'Lanozen',
+                category: 'Pediatrics',
+                image: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=600&h=400&fit=crop',
+                description: 'Pediatric liver and digestive support.',
+                descriptionDetail: 'This pediatric formulation supports liver function and digestive health in children.',
+                uses: [
+                    'Pediatric liver support',
+                    'Childhood digestive health',
+                    'Pediatric hepatoprotection',
+                    'Children\'s digestive aid'
+                ],
+                benefits: [
+                    'Improved liver function in children',
+                    'Better digestive health',
+                    'Safe for pediatric use',
+                    'Child-friendly formulation'
+                ],
+                composition: 'Contains pediatric-appropriate liver and digestive support ingredients.',
+                dosage: 'Syrup',
+                pack: '100ml / 200ml',
+                storage: 'Store in a cool, dry place. Refrigerate after opening.'
+            }
+        };
+
+        // Get product from URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const productKey = urlParams.get('product');
+        const product = products[productKey] || products['rebavit-cap'];
+
+        // Populate product details
+        document.getElementById('product-name').textContent = product.name;
+        document.getElementById('product-main-image').src = product.image;
+        document.getElementById('product-main-image').alt = product.name;
+        document.getElementById('product-category-badge').innerHTML = `<span class="badge-custom">${product.category}</span>`;
+        document.getElementById('breadcrumb-category').textContent = product.category;
+        document.getElementById('product-description').textContent = product.description;
+        document.getElementById('product-description-detail').textContent = product.descriptionDetail;
+        document.getElementById('product-category-info').textContent = product.category;
+        document.getElementById('product-dosage').textContent = product.dosage;
+        document.getElementById('product-pack').textContent = product.pack;
+        document.getElementById('product-storage').textContent = product.storage;
+        document.getElementById('product-composition').textContent = product.composition;
+
+        // Populate uses
+        const usesList = document.getElementById('product-uses');
+        product.uses.forEach(use => {
+            const li = document.createElement('li');
+            li.textContent = use;
+            usesList.appendChild(li);
+        });
+
+        // Populate benefits
+        const benefitsList = document.getElementById('product-benefits');
+        product.benefits.forEach(benefit => {
+            const li = document.createElement('li');
+            li.textContent = benefit;
+            benefitsList.appendChild(li);
+        });
+
+        // Update page title
+        document.title = `${product.name} - Pushyati®`;
+    </script>
+</body>
+</html>
+

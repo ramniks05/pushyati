@@ -52,21 +52,66 @@
             <nav aria-label="breadcrumb" class="breadcrumb-custom mb-4">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item"><a href="products.html">Products</a></li>
+                    <li class="breadcrumb-item"><a href="products.html" id="breadcrumb-products-link">Products</a></li>
+                    <li class="breadcrumb-item"><a href="#" id="breadcrumb-category-link">Category</a></li>
                     <li class="breadcrumb-item active" id="breadcrumb-category">Product</li>
                 </ol>
             </nav>
             <div class="row align-items-center">
                 <div class="col-lg-6">
-                    <h1 class="display-4 fw-bold mb-3" id="product-name">Product Name</h1>
-                    <p class="lead" id="product-category-badge"></p>
+                    <div class="product-hero-content">
+                        <h1 class="display-4 fw-bold mb-3" id="product-name">Product Name</h1>
+                        <div class="mb-4" id="product-category-badge"></div>
+                        <div class="product-quick-actions">
+                            <a href="contact.html" class="btn btn-light btn-lg me-3">
+                                <i class="bi bi-envelope"></i> Inquire Now
+                            </a>
+                            <a href="#" id="back-to-category-btn" class="btn btn-outline-light btn-lg">
+                                <i class="bi bi-arrow-left"></i> Back to Category
+                            </a>
+                        </div>
+                    </div>
                 </div>
                 <div class="col-lg-6 text-center">
-                    <img id="product-main-image" src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=600&h=400&fit=crop" alt="Product" class="product-detail-image">
+                    <div class="product-image-container">
+                        <img id="product-main-image" src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=600&h=400&fit=crop" alt="Product" class="product-detail-image">
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <!-- Quick Navigation Bar -->
+    <section class="section py-4" style="background: var(--light-bg); border-bottom: 1px solid var(--gray-light);">
+        <div class="container">
+            <div class="quick-nav-list" style="flex-direction: row; flex-wrap: wrap; justify-content: center; gap: 1rem;">
+                <a href="products.html" class="quick-nav-item" style="flex: 0 1 auto; min-width: 200px;">
+                    <i class="bi bi-house"></i>
+                    <div>
+                        <strong>All Products</strong>
+                        <small>Browse all categories</small>
+                    </div>
+                    <i class="bi bi-chevron-right"></i>
+                </a>
+                <a href="products.html?category=nutraceuticals" class="quick-nav-item" style="flex: 0 1 auto; min-width: 200px;">
+                    <i class="bi bi-capsule"></i>
+                    <div>
+                        <strong>Nutraceuticals</strong>
+                        <small>Wellness products</small>
+                    </div>
+                    <i class="bi bi-chevron-right"></i>
+                </a>
+                <a href="products.html?category=pharmaceuticals" class="quick-nav-item" style="flex: 0 1 auto; min-width: 200px;">
+                    <i class="bi bi-capsule-pill"></i>
+                    <div>
+                        <strong>Pharmaceuticals</strong>
+                        <small>Medical products</small>
+                    </div>
+                    <i class="bi bi-chevron-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
 
     <!-- Product Details -->
     <section class="section">
@@ -100,46 +145,47 @@
                 </div>
                 
                 <div class="col-lg-4">
-                    <!-- Product Info Card -->
-                    <div class="detail-section">
-                        <h4 class="mb-4">Product Information</h4>
-                        <div class="mb-3">
-                            <strong>Category:</strong><br>
-                            <span id="product-category-info" class="badge-custom"></span>
-                        </div>
-                        <div class="mb-3">
-                            <strong>Dosage Form:</strong><br>
-                            <span id="product-dosage"></span>
-                        </div>
-                        <div class="mb-3">
-                            <strong>Pack Size:</strong><br>
-                            <span id="product-pack"></span>
-                        </div>
-                        <div class="mb-3">
-                            <strong>Storage:</strong><br>
-                            <span id="product-storage"></span>
-                        </div>
-                        <hr>
-                        <div class="text-center">
-                            <a href="contact.html" class="btn btn-primary w-100">
-                                <i class="bi bi-envelope"></i> Inquire About This Product
-                            </a>
-                        </div>
-                    </div>
-                    
-                    <!-- Related Products -->
-                    <div class="detail-section">
-                        <h4 class="mb-4">Related Products</h4>
-                        <div class="list-group">
-                            <a href="products.html" class="list-group-item list-group-item-action">
-                                <i class="bi bi-arrow-right"></i> View All Products
-                            </a>
-                            <a href="products.html?category=nutraceuticals" class="list-group-item list-group-item-action">
-                                <i class="bi bi-capsule"></i> Nutraceuticals
-                            </a>
-                            <a href="products.html?category=pharmaceuticals" class="list-group-item list-group-item-action">
-                                <i class="bi bi-capsule-pill"></i> Pharmaceuticals
-                            </a>
+                    <div class="sidebar-wrapper">
+                        <!-- Product Info Card -->
+                        <div class="detail-section sticky-sidebar">
+                            <h4 class="mb-4">
+                                <i class="bi bi-info-circle text-primary"></i> Product Information
+                            </h4>
+                            <div class="product-info-item">
+                                <div class="info-label">
+                                    <i class="bi bi-tag"></i> Category
+                                </div>
+                                <div class="info-value">
+                                    <span id="product-category-info" class="badge-custom"></span>
+                                </div>
+                            </div>
+                            <div class="product-info-item">
+                                <div class="info-label">
+                                    <i class="bi bi-capsule"></i> Dosage Form
+                                </div>
+                                <div class="info-value" id="product-dosage"></div>
+                            </div>
+                            <div class="product-info-item">
+                                <div class="info-label">
+                                    <i class="bi bi-box"></i> Pack Size
+                                </div>
+                                <div class="info-value" id="product-pack"></div>
+                            </div>
+                            <div class="product-info-item">
+                                <div class="info-label">
+                                    <i class="bi bi-thermometer-half"></i> Storage
+                                </div>
+                                <div class="info-value" id="product-storage"></div>
+                            </div>
+                            <hr class="my-4">
+                            <div class="d-grid gap-2">
+                                <a href="contact.html" class="btn btn-primary btn-lg">
+                                    <i class="bi bi-envelope"></i> Inquire About This Product
+                                </a>
+                                <a href="#" id="view-category-products" class="btn btn-outline-primary">
+                                    <i class="bi bi-grid"></i> View All in Category
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -184,32 +230,87 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        // Product database
-        const products = {
-            'rebavit-cap': {
-                name: 'Rebavit Cap',
-                category: 'General Wellness & Immunity',
-                image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=600&h=400&fit=crop',
-                description: 'Rebavit Cap is a comprehensive nutritional supplement designed to support general wellness and boost immunity.',
-                descriptionDetail: 'This advanced formulation combines essential vitamins, minerals, and immune-boosting ingredients to help maintain optimal health and strengthen the body\'s natural defense mechanisms.',
-                uses: [
-                    'Supports immune system function',
-                    'Provides essential vitamins and minerals',
-                    'Helps maintain overall wellness',
-                    'Supports energy levels and vitality'
-                ],
-                benefits: [
-                    'Enhanced immune response',
-                    'Improved energy levels',
-                    'Better overall health maintenance',
-                    'Protection against nutritional deficiencies'
-                ],
-                composition: 'Contains Vitamin C, Vitamin D, Zinc, and other essential micronutrients in optimal ratios.',
-                dosage: 'Capsules',
-                pack: '10x10 Strips',
-                storage: 'Store in a cool, dry place below 30°C'
-            },
-            'rebavit-syp': {
+        // Global variables
+        let productsData = null;
+        let products = {};
+        
+        // Load product data from JSON file
+        async function loadProductData() {
+            // Try fetch first (works on real web servers - http/https)
+            try {
+                const response = await fetch('data/products.json');
+                if (response.ok) {
+                    productsData = await response.json();
+                    
+                    // Convert products array to object with id as key for easy lookup
+                    productsData.products.forEach(product => {
+                        products[product.id] = {
+                            name: product.name,
+                            category: product.subcategory,
+                            image: product.image,
+                            description: product.details.descriptionDetail,
+                            descriptionDetail: product.details.descriptionDetail,
+                            uses: product.details.uses,
+                            benefits: product.details.benefits,
+                            composition: product.details.composition,
+                            dosage: product.details.dosage,
+                            pack: product.details.pack,
+                            storage: product.details.storage
+                        };
+                    });
+                    
+                    initializeProductPage();
+                    return;
+                }
+            } catch (error) {
+                console.warn('Fetch failed, trying XMLHttpRequest:', error);
+            }
+            
+            // Fallback: Use XMLHttpRequest (works with file:// protocol for local development)
+            const xhr = new XMLHttpRequest();
+            xhr.open('GET', 'data/products.json', true);
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === 4) {
+                    if (xhr.status === 200 || xhr.status === 0) { // 0 for file:// protocol
+                        try {
+                            productsData = JSON.parse(xhr.responseText);
+                            
+                            // Convert products array to object with id as key for easy lookup
+                            productsData.products.forEach(product => {
+                                products[product.id] = {
+                                    name: product.name,
+                                    category: product.subcategory,
+                                    image: product.image,
+                                    description: product.details.descriptionDetail,
+                                    descriptionDetail: product.details.descriptionDetail,
+                                    uses: product.details.uses,
+                                    benefits: product.details.benefits,
+                                    composition: product.details.composition,
+                                    dosage: product.details.dosage,
+                                    pack: product.details.pack,
+                                    storage: product.details.storage
+                                };
+                            });
+                            
+                            initializeProductPage();
+                        } catch (parseError) {
+                            console.error('Error parsing JSON:', parseError);
+                            document.getElementById('product-name').textContent = 'Error Loading Product';
+                        }
+                    } else {
+                        console.error('Failed to load JSON file. Status:', xhr.status);
+                        document.getElementById('product-name').textContent = 'Product Not Found';
+                    }
+                }
+            };
+            xhr.onerror = function() {
+                console.error('Network error loading JSON file');
+                document.getElementById('product-name').textContent = 'Error Loading Product';
+            };
+            xhr.send(null);
+        }
+        
+        function initializeProductPage() {
                 name: 'Rebavit Syp',
                 category: 'General Wellness & Immunity / Pediatric Nutrition',
                 image: 'https://images.unsplash.com/photo-1550572017-edd951b55104?w=600&h=400&fit=crop',
@@ -942,71 +1043,92 @@
                 ],
                 composition: 'Contains specialized gynecological health support ingredients.',
                 dosage: 'Tablets',
-                pack: '10x10 Strips',
-                storage: 'Store in a cool, dry place below 30°C'
-            },
-            'lanozen': {
-                name: 'Lanozen',
-                category: 'Pediatrics',
-                image: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=600&h=400&fit=crop',
-                description: 'Pediatric liver and digestive support.',
-                descriptionDetail: 'This pediatric formulation supports liver function and digestive health in children.',
-                uses: [
-                    'Pediatric liver support',
-                    'Childhood digestive health',
-                    'Pediatric hepatoprotection',
-                    'Children\'s digestive aid'
-                ],
-                benefits: [
-                    'Improved liver function in children',
-                    'Better digestive health',
-                    'Safe for pediatric use',
-                    'Child-friendly formulation'
-                ],
-                composition: 'Contains pediatric-appropriate liver and digestive support ingredients.',
-                dosage: 'Syrup',
-                pack: '100ml / 200ml',
-                storage: 'Store in a cool, dry place. Refrigerate after opening.'
+            // Get product from URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const productKey = urlParams.get('product');
+            const categoryParam = urlParams.get('category');
+            
+            // Find product in the loaded data
+            const productFromData = productsData.products.find(p => p.id === productKey);
+            if (!productFromData) {
+                console.error('Product not found:', productKey);
+                return;
             }
-        };
+            
+            const product = {
+                name: productFromData.name,
+                category: productFromData.subcategory,
+                image: productFromData.image,
+                description: productFromData.description,
+                descriptionDetail: productFromData.details.descriptionDetail,
+                uses: productFromData.details.uses,
+                benefits: productFromData.details.benefits,
+                composition: productFromData.details.composition,
+                dosage: productFromData.details.dosage,
+                pack: productFromData.details.pack,
+                storage: productFromData.details.storage
+            };
 
-        // Get product from URL
-        const urlParams = new URLSearchParams(window.location.search);
-        const productKey = urlParams.get('product');
-        const product = products[productKey] || products['rebavit-cap'];
+            // Determine category (nutraceuticals or pharmaceuticals)
+            let productCategory = 'nutraceuticals';
+            if (categoryParam) {
+                productCategory = categoryParam;
+            } else {
+                // Determine from product data
+                productCategory = productFromData.category;
+            }
 
-        // Populate product details
-        document.getElementById('product-name').textContent = product.name;
-        document.getElementById('product-main-image').src = product.image;
-        document.getElementById('product-main-image').alt = product.name;
-        document.getElementById('product-category-badge').innerHTML = `<span class="badge-custom">${product.category}</span>`;
-        document.getElementById('breadcrumb-category').textContent = product.category;
-        document.getElementById('product-description').textContent = product.description;
-        document.getElementById('product-description-detail').textContent = product.descriptionDetail;
-        document.getElementById('product-category-info').textContent = product.category;
-        document.getElementById('product-dosage').textContent = product.dosage;
-        document.getElementById('product-pack').textContent = product.pack;
-        document.getElementById('product-storage').textContent = product.storage;
-        document.getElementById('product-composition').textContent = product.composition;
+            // Populate product details
+            document.getElementById('product-name').textContent = product.name;
+            document.getElementById('product-main-image').src = product.image;
+            document.getElementById('product-main-image').alt = product.name;
+            document.getElementById('product-category-badge').innerHTML = `<span class="badge-custom">${product.category}</span>`;
+            document.getElementById('breadcrumb-category').textContent = product.name;
+            
+            // Update breadcrumb category link
+            const categoryName = productCategory === 'nutraceuticals' ? 'Nutraceuticals' : 'Pharmaceuticals';
+            const breadcrumbCategoryLink = document.getElementById('breadcrumb-category-link');
+            breadcrumbCategoryLink.textContent = categoryName;
+            breadcrumbCategoryLink.href = `products.html?category=${productCategory}`;
+            
+            // Update back button
+            const backToCategoryBtn = document.getElementById('back-to-category-btn');
+            backToCategoryBtn.href = `products.html?category=${productCategory}`;
+            
+            // Update view category products link
+            const viewCategoryProducts = document.getElementById('view-category-products');
+            viewCategoryProducts.href = `products.html?category=${productCategory}`;
+            
+            document.getElementById('product-description').textContent = product.description;
+            document.getElementById('product-description-detail').textContent = product.descriptionDetail;
+            document.getElementById('product-category-info').textContent = product.category;
+            document.getElementById('product-dosage').textContent = product.dosage;
+            document.getElementById('product-pack').textContent = product.pack;
+            document.getElementById('product-storage').textContent = product.storage;
+            document.getElementById('product-composition').textContent = product.composition;
 
-        // Populate uses
-        const usesList = document.getElementById('product-uses');
-        product.uses.forEach(use => {
-            const li = document.createElement('li');
-            li.textContent = use;
-            usesList.appendChild(li);
-        });
+            // Populate uses
+            const usesList = document.getElementById('product-uses');
+            product.uses.forEach(use => {
+                const li = document.createElement('li');
+                li.textContent = use;
+                usesList.appendChild(li);
+            });
 
-        // Populate benefits
-        const benefitsList = document.getElementById('product-benefits');
-        product.benefits.forEach(benefit => {
-            const li = document.createElement('li');
-            li.textContent = benefit;
-            benefitsList.appendChild(li);
-        });
+            // Populate benefits
+            const benefitsList = document.getElementById('product-benefits');
+            product.benefits.forEach(benefit => {
+                const li = document.createElement('li');
+                li.textContent = benefit;
+                benefitsList.appendChild(li);
+            });
 
-        // Update page title
-        document.title = `${product.name} - Pushyati®`;
+            // Update page title
+            document.title = `${product.name} - Pushyati®`;
+        }
+        
+        // Initialize on page load
+        loadProductData();
     </script>
 </body>
 </html>

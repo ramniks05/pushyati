@@ -194,28 +194,43 @@
         
         // Load product data from JSON file
         async function loadProductData() {
+            // Try multiple paths for compatibility
+            const jsonPaths = [
+                './data/products.json',
+                '/data/products.json',
+                'data/products.json'
+            ];
+            
             // Try fetch first (works on real web servers - http/https)
-            try {
-                const response = await fetch('data/products.json');
-                if (response.ok) {
-                    productsData = await response.json();
-                    products = productsData.products;
-                    initializePage();
-                    return;
+            for (const jsonPath of jsonPaths) {
+                try {
+                    console.log('Trying to load:', jsonPath);
+                    const response = await fetch(jsonPath);
+                    if (response.ok) {
+                        productsData = await response.json();
+                        products = productsData.products;
+                        console.log('Successfully loaded products:', products.length);
+                        initializePage();
+                        return;
+                    } else {
+                        console.warn('Failed to load:', jsonPath, 'Status:', response.status);
+                    }
+                } catch (error) {
+                    console.warn('Fetch failed for', jsonPath, ':', error);
                 }
-            } catch (error) {
-                console.warn('Fetch failed, trying XMLHttpRequest:', error);
             }
             
             // Fallback: Use XMLHttpRequest (works with file:// protocol for local development)
+            console.log('Trying XMLHttpRequest fallback...');
             const xhr = new XMLHttpRequest();
-            xhr.open('GET', 'data/products.json', true);
+            xhr.open('GET', './data/products.json', true);
             xhr.onreadystatechange = function() {
                 if (xhr.readyState === 4) {
                     if (xhr.status === 200 || xhr.status === 0) { // 0 for file:// protocol
                         try {
                             productsData = JSON.parse(xhr.responseText);
                             products = productsData.products;
+                            console.log('Successfully loaded products via XHR:', products.length);
                             initializePage();
                         } catch (parseError) {
                             console.error('Error parsing JSON:', parseError);
@@ -223,13 +238,13 @@
                         }
                     } else {
                         console.error('Failed to load JSON file. Status:', xhr.status);
-                        showError('Failed to load product data.');
+                        showError('Failed to load product data. Please check the console for details.');
                     }
                 }
             };
             xhr.onerror = function() {
                 console.error('Network error loading JSON file');
-                showError('Network error loading product data.');
+                showError('Network error loading product data. Please ensure you are running a web server.');
             };
             xhr.send(null);
         }

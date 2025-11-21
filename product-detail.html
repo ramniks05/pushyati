@@ -236,39 +236,53 @@
         
         // Load product data from JSON file
         async function loadProductData() {
+            // Try multiple paths for compatibility
+            const jsonPaths = [
+                './data/products.json',
+                '/data/products.json',
+                'data/products.json'
+            ];
+            
             // Try fetch first (works on real web servers - http/https)
-            try {
-                const response = await fetch('data/products.json');
-                if (response.ok) {
-                    productsData = await response.json();
-                    
-                    // Convert products array to object with id as key for easy lookup
-                    productsData.products.forEach(product => {
-                        products[product.id] = {
-                            name: product.name,
-                            category: product.subcategory,
-                            image: product.image,
-                            description: product.details.descriptionDetail,
-                            descriptionDetail: product.details.descriptionDetail,
-                            uses: product.details.uses,
-                            benefits: product.details.benefits,
-                            composition: product.details.composition,
-                            dosage: product.details.dosage,
-                            pack: product.details.pack,
-                            storage: product.details.storage
-                        };
-                    });
-                    
-                    initializeProductPage();
-                    return;
+            for (const jsonPath of jsonPaths) {
+                try {
+                    console.log('Trying to load:', jsonPath);
+                    const response = await fetch(jsonPath);
+                    if (response.ok) {
+                        productsData = await response.json();
+                        
+                        // Convert products array to object with id as key for easy lookup
+                        productsData.products.forEach(product => {
+                            products[product.id] = {
+                                name: product.name,
+                                category: product.subcategory,
+                                image: product.image,
+                                description: product.details.descriptionDetail,
+                                descriptionDetail: product.details.descriptionDetail,
+                                uses: product.details.uses,
+                                benefits: product.details.benefits,
+                                composition: product.details.composition,
+                                dosage: product.details.dosage,
+                                pack: product.details.pack,
+                                storage: product.details.storage
+                            };
+                        });
+                        
+                        console.log('Successfully loaded products:', Object.keys(products).length);
+                        initializeProductPage();
+                        return;
+                    } else {
+                        console.warn('Failed to load:', jsonPath, 'Status:', response.status);
+                    }
+                } catch (error) {
+                    console.warn('Fetch failed for', jsonPath, ':', error);
                 }
-            } catch (error) {
-                console.warn('Fetch failed, trying XMLHttpRequest:', error);
             }
             
             // Fallback: Use XMLHttpRequest (works with file:// protocol for local development)
+            console.log('Trying XMLHttpRequest fallback...');
             const xhr = new XMLHttpRequest();
-            xhr.open('GET', 'data/products.json', true);
+            xhr.open('GET', './data/products.json', true);
             xhr.onreadystatechange = function() {
                 if (xhr.readyState === 4) {
                     if (xhr.status === 200 || xhr.status === 0) { // 0 for file:// protocol
@@ -292,6 +306,7 @@
                                 };
                             });
                             
+                            console.log('Successfully loaded products via XHR:', Object.keys(products).length);
                             initializeProductPage();
                         } catch (parseError) {
                             console.error('Error parsing JSON:', parseError);

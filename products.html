@@ -53,469 +53,100 @@
                 <nav aria-label="breadcrumb" class="breadcrumb-custom">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                        <li class="breadcrumb-item active">Products</li>
+                        <li class="breadcrumb-item" id="breadcrumb-category-link"><a href="products.html">Products</a></li>
+                        <li class="breadcrumb-item active" id="breadcrumb-category">Products</li>
                     </ol>
                 </nav>
-                <h1 class="display-4 fw-bold mb-3">Our Products</h1>
-                <p class="lead">Comprehensive range of pharmaceuticals and nutraceuticals</p>
+                <h1 class="display-4 fw-bold mb-3" id="page-title">Our Products</h1>
+                <p class="lead" id="page-subtitle">Comprehensive range of pharmaceuticals and nutraceuticals</p>
             </div>
         </div>
     </div>
 
-    <!-- Category Tabs -->
-    <section class="section">
+    <!-- Category Page (Default) -->
+    <section class="section" id="category-page">
         <div class="container">
-            <div class="category-tabs">
-                <button class="category-tab active" onclick="showCategory('nutraceuticals')">Nutraceuticals</button>
-                <button class="category-tab" onclick="showCategory('pharmaceuticals')">Pharmaceuticals</button>
-            </div>
+            <h2 class="section-title">Browse by Category</h2>
+            <p class="section-subtitle">Select a category to view our products</p>
             
-            <!-- Nutraceuticals Category -->
-            <div id="nutraceuticals" class="category-content">
-                <h3 class="mb-5 text-center">Nutraceutical Products</h3>
-                
-                <!-- General Wellness & Immunity -->
-                <div class="mb-5">
-                    <h4 class="mb-4"><i class="bi bi-heart-pulse text-primary"></i> General Wellness & Immunity</h4>
-                    <div class="row">
-                        <div class="col-md-6 col-lg-4 mb-4">
-                            <a href="product-detail.html?product=rebavit-cap" class="product-card">
-                                <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=600&h=400&fit=crop" alt="Rebavit Cap" class="product-image">
-                                <div class="product-card-body">
-                                    <div class="product-category">General Wellness & Immunity</div>
-                                    <h5 class="product-name">Rebavit Cap</h5>
-                                    <p class="product-benefits">Supports general wellness and boosts immunity with essential vitamins and nutrients.</p>
+            <div class="row g-4 mt-4">
+                <div class="col-md-6">
+                    <a href="products.html?category=nutraceuticals" class="category-card-link">
+                        <div class="card category-card h-100 shadow-sm">
+                            <img src="https://images.unsplash.com/photo-1550572017-edd951b55104?w=800&h=600&fit=crop" class="card-img-top" alt="Nutraceuticals">
+                            <div class="card-body text-center">
+                                <div class="category-icon mb-3">
+                                    <i class="bi bi-capsule"></i>
                                 </div>
-                            </a>
-                        </div>
-                        <div class="col-md-6 col-lg-4 mb-4">
-                            <a href="product-detail.html?product=rebavit-syp" class="product-card">
-                                <img src="https://images.unsplash.com/photo-1550572017-edd951b55104?w=600&h=400&fit=crop" alt="Rebavit Syp" class="product-image">
-                                <div class="product-card-body">
-                                    <div class="product-category">General Wellness & Immunity</div>
-                                    <h5 class="product-name">Rebavit Syp</h5>
-                                    <p class="product-benefits">Liquid formulation for enhanced immunity and overall wellness support.</p>
+                                <h3 class="card-title">Nutraceuticals</h3>
+                                <p class="card-text">General wellness, bone & joint health, digestive health, and specialized nutrition for men, women, and children.</p>
+                                <div class="mt-4">
+                                    <span class="btn btn-primary">
+                                        View Products <i class="bi bi-arrow-right"></i>
+                                    </span>
                                 </div>
-                            </a>
+                            </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
-                
-                <!-- Bone & Joint Health -->
-                <div class="mb-5">
-                    <h4 class="mb-4"><i class="bi bi-bone text-primary"></i> Bone & Joint Health</h4>
-                    <div class="row">
-                        <div class="col-md-6 col-lg-4 mb-4">
-                            <a href="product-detail.html?product=calciblis" class="product-card">
-                                <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&h=400&fit=crop" alt="Calciblis" class="product-image">
-                                <div class="product-card-body">
-                                    <div class="product-category">Bone & Joint Health</div>
-                                    <h5 class="product-name">Calciblis</h5>
-                                    <p class="product-benefits">Promotes bone strength and joint health with essential calcium and minerals.</p>
+                <div class="col-md-6">
+                    <a href="products.html?category=pharmaceuticals" class="category-card-link">
+                        <div class="card category-card h-100 shadow-sm">
+                            <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=800&h=600&fit=crop" class="card-img-top" alt="Pharmaceuticals">
+                            <div class="card-body text-center">
+                                <div class="category-icon mb-3">
+                                    <i class="bi bi-capsule-pill"></i>
                                 </div>
-                            </a>
-                        </div>
-                        <div class="col-md-6 col-lg-4 mb-4">
-                            <a href="product-detail.html?product=ostoreph" class="product-card">
-                                <img src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=600&h=400&fit=crop" alt="Ostoreph" class="product-image">
-                                <div class="product-card-body">
-                                    <div class="product-category">Bone & Joint Health</div>
-                                    <h5 class="product-name">Ostoreph</h5>
-                                    <p class="product-benefits">Advanced formula for bone density and joint mobility support.</p>
+                                <h3 class="card-title">Pharmaceuticals</h3>
+                                <p class="card-text">Gastro, ortho, respiratory, antibiotics, pain management, dermatology, gynecology, and pediatrics.</p>
+                                <div class="mt-4">
+                                    <span class="btn btn-primary">
+                                        View Products <i class="bi bi-arrow-right"></i>
+                                    </span>
                                 </div>
-                            </a>
+                            </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
-                
-                <!-- Digestive & Liver Health -->
-                <div class="mb-5">
-                    <h4 class="mb-4"><i class="bi bi-stomach text-primary"></i> Digestive & Liver Health</h4>
-                    <div class="row">
-                        <div class="col-md-6 col-lg-4 mb-4">
-                            <a href="product-detail.html?product=livoreph-xt-nutra" class="product-card">
-                                <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=600&h=400&fit=crop" alt="Livoreph XT" class="product-image">
-                                <div class="product-card-body">
-                                    <div class="product-category">Digestive & Liver Health</div>
-                                    <h5 class="product-name">Livoreph XT</h5>
-                                    <p class="product-benefits">Supports liver function and digestive health with natural ingredients.</p>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Women's Wellness -->
-                <div class="mb-5">
-                    <h4 class="mb-4"><i class="bi bi-gender-female text-primary"></i> Women's Wellness</h4>
-                    <div class="row">
-                        <div class="col-md-6 col-lg-4 mb-4">
-                            <a href="product-detail.html?product=pusabam-q10" class="product-card">
-                                <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=600&h=400&fit=crop" alt="Pusabam Q10" class="product-image">
-                                <div class="product-card-body">
-                                    <div class="product-category">Women's Wellness</div>
-                                    <h5 class="product-name">Pusabam Q10</h5>
-                                    <p class="product-benefits">Coenzyme Q10 formulation for women's health and wellness.</p>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-md-6 col-lg-4 mb-4">
-                            <a href="product-detail.html?product=feronent-ls" class="product-card">
-                                <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=600&h=400&fit=crop" alt="Feronent LS" class="product-image">
-                                <div class="product-card-body">
-                                    <div class="product-category">Women's Wellness</div>
-                                    <h5 class="product-name">Feronent LS</h5>
-                                    <p class="product-benefits">Specialized formula for women's nutritional needs and wellness.</p>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Men's Wellness -->
-                <div class="mb-5">
-                    <h4 class="mb-4"><i class="bi bi-gender-male text-primary"></i> Men's Wellness</h4>
-                    <div class="row">
-                        <div class="col-md-6 col-lg-4 mb-4">
-                            <a href="product-detail.html?product=pusabam-q10-men" class="product-card">
-                                <img src="https://images.unsplash.com/photo-1550572017-edd951b55104?w=600&h=400&fit=crop" alt="Pusabam Q10" class="product-image">
-                                <div class="product-card-body">
-                                    <div class="product-category">Men's Wellness</div>
-                                    <h5 class="product-name">Pusabam Q10</h5>
-                                    <p class="product-benefits">Coenzyme Q10 for men's health, energy, and vitality support.</p>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Pediatric Nutrition -->
-                <div class="mb-5">
-                    <h4 class="mb-4"><i class="bi bi-heart text-primary"></i> Pediatric Nutrition</h4>
-                    <div class="row">
-                        <div class="col-md-6 col-lg-4 mb-4">
-                            <a href="product-detail.html?product=rebavit-syp-ped" class="product-card">
-                                <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=600&h=400&fit=crop" alt="Rebavit Syp" class="product-image">
-                                <div class="product-card-body">
-                                    <div class="product-category">Pediatric Nutrition</div>
-                                    <h5 class="product-name">Rebavit Syp</h5>
-                                    <p class="product-benefits">Specially formulated for children's nutritional needs and growth support.</p>
-                                </div>
-                            </a>
-                        </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Listing Page -->
+    <section class="section" id="product-listing-page" style="display: none;">
+        <div class="container">
+            <!-- Navigation Bar -->
+            <div class="product-listing-header mb-4">
+                <a href="products.html" class="btn btn-outline-primary mb-3">
+                    <i class="bi bi-arrow-left"></i> Back to Categories
+                </a>
+                <div class="d-flex flex-wrap justify-content-between align-items-center gap-3 mb-4">
+                    <h2 class="section-title mb-0" id="listing-title"></h2>
+                    <div class="product-filters">
+                        <i class="bi bi-search search-icon"></i>
+                        <input type="text" id="product-search" class="form-control" placeholder="Search products...">
                     </div>
                 </div>
             </div>
             
-            <!-- Pharmaceuticals Category -->
-            <div id="pharmaceuticals" class="category-content" style="display: none;">
-                <h3 class="mb-5 text-center">Pharmaceutical Products</h3>
-                
-                <!-- Gastro -->
-                <div class="mb-5">
-                    <h4 class="mb-4"><i class="bi bi-stomach text-primary"></i> Gastro</h4>
-                    <div class="row">
-                        <div class="col-md-6 col-lg-4 mb-4">
-                            <a href="product-detail.html?product=livoreph-s" class="product-card">
-                                <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=600&h=400&fit=crop" alt="Livoreph S" class="product-image">
-                                <div class="product-card-body">
-                                    <div class="product-category">Gastro</div>
-                                    <h5 class="product-name">Livoreph S</h5>
-                                    <p class="product-benefits">Liver support and digestive health management.</p>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-md-6 col-lg-4 mb-4">
-                            <a href="product-detail.html?product=livoreph-xt" class="product-card">
-                                <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=600&h=400&fit=crop" alt="Livoreph XT" class="product-image">
-                                <div class="product-card-body">
-                                    <div class="product-category">Gastro</div>
-                                    <h5 class="product-name">Livoreph XT</h5>
-                                    <p class="product-benefits">Advanced liver and digestive system support.</p>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-md-6 col-lg-4 mb-4">
-                            <a href="product-detail.html?product=rebezod-d" class="product-card">
-                                <img src="https://images.unsplash.com/photo-1550572017-edd951b55104?w=600&h=400&fit=crop" alt="Rebezod D" class="product-image">
-                                <div class="product-card-body">
-                                    <div class="product-category">Gastro</div>
-                                    <h5 class="product-name">Rebezod D</h5>
-                                    <p class="product-benefits">Gastrointestinal health and acid management.</p>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-md-6 col-lg-4 mb-4">
-                            <a href="product-detail.html?product=tudopan-dsr" class="product-card">
-                                <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&h=400&fit=crop" alt="Tudopan DSR" class="product-image">
-                                <div class="product-card-body">
-                                    <div class="product-category">Gastro</div>
-                                    <h5 class="product-name">Tudopan DSR</h5>
-                                    <p class="product-benefits">Delayed-release formulation for gastric protection.</p>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-md-6 col-lg-4 mb-4">
-                            <a href="product-detail.html?product=rebezod-ls" class="product-card">
-                                <img src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=600&h=400&fit=crop" alt="Rebezod LS" class="product-image">
-                                <div class="product-card-body">
-                                    <div class="product-category">Gastro</div>
-                                    <h5 class="product-name">Rebezod LS</h5>
-                                    <p class="product-benefits">Gastrointestinal comfort and digestive support.</p>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-md-6 col-lg-4 mb-4">
-                            <a href="product-detail.html?product=puwarbit" class="product-card">
-                                <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=600&h=400&fit=crop" alt="Puwarbit" class="product-image">
-                                <div class="product-card-body">
-                                    <div class="product-category">Gastro</div>
-                                    <h5 class="product-name">Puwarbit</h5>
-                                    <p class="product-benefits">Digestive enzyme and gut health support.</p>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-md-6 col-lg-4 mb-4">
-                            <a href="product-detail.html?product=lanoson" class="product-card">
-                                <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=600&h=400&fit=crop" alt="Lanoson" class="product-image">
-                                <div class="product-card-body">
-                                    <div class="product-category">Gastro</div>
-                                    <h5 class="product-name">Lanoson</h5>
-                                    <p class="product-benefits">Liver function support and hepatoprotection.</p>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
+            <!-- Subcategory Filter Pills -->
+            <div class="subcategory-filters-container mb-4" id="subcategory-filters-container" style="display: none;">
+                <div class="subcategory-filters" id="subcategory-filters">
+                    <button class="filter-pill active" data-subcategory="all">
+                        <i class="bi bi-grid-3x3-gap me-2"></i>All Products
+                    </button>
                 </div>
-                
-                <!-- Ortho -->
-                <div class="mb-5">
-                    <h4 class="mb-4"><i class="bi bi-bone text-primary"></i> Ortho</h4>
-                    <div class="row">
-                        <div class="col-md-6 col-lg-4 mb-4">
-                            <a href="product-detail.html?product=ostoreph-pharma" class="product-card">
-                                <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&h=400&fit=crop" alt="Ostoreph" class="product-image">
-                                <div class="product-card-body">
-                                    <div class="product-category">Ortho</div>
-                                    <h5 class="product-name">Ostoreph</h5>
-                                    <p class="product-benefits">Bone health and orthopedic support.</p>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-md-6 col-lg-4 mb-4">
-                            <a href="product-detail.html?product=calciblis-pharma" class="product-card">
-                                <img src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=600&h=400&fit=crop" alt="Calciblis" class="product-image">
-                                <div class="product-card-body">
-                                    <div class="product-category">Ortho</div>
-                                    <h5 class="product-name">Calciblis</h5>
-                                    <p class="product-benefits">Calcium and bone strength support.</p>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Respiratory & Pulmonology -->
-                <div class="mb-5">
-                    <h4 class="mb-4"><i class="bi bi-lungs text-primary"></i> Respiratory & Pulmonology</h4>
-                    <div class="row">
-                        <div class="col-md-6 col-lg-4 mb-4">
-                            <a href="product-detail.html?product=montireph-lc" class="product-card">
-                                <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=600&h=400&fit=crop" alt="Montireph LC" class="product-image">
-                                <div class="product-card-body">
-                                    <div class="product-category">Respiratory & Pulmonology</div>
-                                    <h5 class="product-name">Montireph LC</h5>
-                                    <p class="product-benefits">Respiratory health and lung function support.</p>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-md-6 col-lg-4 mb-4">
-                            <a href="product-detail.html?product=montireph-lc-jr" class="product-card">
-                                <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=600&h=400&fit=crop" alt="Montireph LC Jr" class="product-image">
-                                <div class="product-card-body">
-                                    <div class="product-category">Respiratory & Pulmonology</div>
-                                    <h5 class="product-name">Montireph LC Jr</h5>
-                                    <p class="product-benefits">Pediatric respiratory health support.</p>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-md-6 col-lg-4 mb-4">
-                            <a href="product-detail.html?product=pusalo-bm" class="product-card">
-                                <img src="https://images.unsplash.com/photo-1550572017-edd951b55104?w=600&h=400&fit=crop" alt="Pusalo BM" class="product-image">
-                                <div class="product-card-body">
-                                    <div class="product-category">Respiratory & Pulmonology</div>
-                                    <h5 class="product-name">Pusalo BM</h5>
-                                    <p class="product-benefits">Bronchial management and respiratory relief.</p>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-md-6 col-lg-4 mb-4">
-                            <a href="product-detail.html?product=tudokof-dx" class="product-card">
-                                <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&h=400&fit=crop" alt="Tudokof DX" class="product-image">
-                                <div class="product-card-body">
-                                    <div class="product-category">Respiratory & Pulmonology</div>
-                                    <h5 class="product-name">Tudokof DX</h5>
-                                    <p class="product-benefits">Cough and respiratory symptom management.</p>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-md-6 col-lg-4 mb-4">
-                            <a href="product-detail.html?product=tudokof-ls" class="product-card">
-                                <img src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=600&h=400&fit=crop" alt="Tudokof LS" class="product-image">
-                                <div class="product-card-body">
-                                    <div class="product-category">Respiratory & Pulmonology</div>
-                                    <h5 class="product-name">Tudokof LS</h5>
-                                    <p class="product-benefits">Long-acting cough and respiratory support.</p>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Antibiotics -->
-                <div class="mb-5">
-                    <h4 class="mb-4"><i class="bi bi-shield-check text-primary"></i> Antibiotics</h4>
-                    <div class="row">
-                        <div class="col-md-6 col-lg-4 mb-4">
-                            <a href="product-detail.html?product=obioreph-ms" class="product-card">
-                                <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=600&h=400&fit=crop" alt="Obioreph MS" class="product-image">
-                                <div class="product-card-body">
-                                    <div class="product-category">Antibiotics</div>
-                                    <h5 class="product-name">Obioreph MS</h5>
-                                    <p class="product-benefits">Broad-spectrum antibiotic for bacterial infections.</p>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-md-6 col-lg-4 mb-4">
-                            <a href="product-detail.html?product=obioreph-oz" class="product-card">
-                                <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=600&h=400&fit=crop" alt="Obioreph OZ" class="product-image">
-                                <div class="product-card-body">
-                                    <div class="product-category">Antibiotics</div>
-                                    <h5 class="product-name">Obioreph OZ</h5>
-                                    <p class="product-benefits">Combination antibiotic for effective treatment.</p>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-md-6 col-lg-4 mb-4">
-                            <a href="product-detail.html?product=pusaclav-625" class="product-card">
-                                <img src="https://images.unsplash.com/photo-1550572017-edd951b55104?w=600&h=400&fit=crop" alt="Pusaclav 625" class="product-image">
-                                <div class="product-card-body">
-                                    <div class="product-category">Antibiotics</div>
-                                    <h5 class="product-name">Pusaclav 625</h5>
-                                    <p class="product-benefits">Amoxicillin-clavulanate combination therapy.</p>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-md-6 col-lg-4 mb-4">
-                            <a href="product-detail.html?product=pusapod-cv" class="product-card">
-                                <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&h=400&fit=crop" alt="Pusapod CV" class="product-image">
-                                <div class="product-card-body">
-                                    <div class="product-category">Antibiotics</div>
-                                    <h5 class="product-name">Pusapod CV</h5>
-                                    <p class="product-benefits">Cephalosporin antibiotic for bacterial infections.</p>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-md-6 col-lg-4 mb-4">
-                            <a href="product-detail.html?product=pusapod-cv-jr" class="product-card">
-                                <img src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=600&h=400&fit=crop" alt="Pusapod CV Jr" class="product-image">
-                                <div class="product-card-body">
-                                    <div class="product-category">Antibiotics</div>
-                                    <h5 class="product-name">Pusapod CV Jr</h5>
-                                    <p class="product-benefits">Pediatric antibiotic formulation.</p>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Pain Management -->
-                <div class="mb-5">
-                    <h4 class="mb-4"><i class="bi bi-heart-pulse text-primary"></i> Pain Management</h4>
-                    <div class="row">
-                        <div class="col-md-6 col-lg-4 mb-4">
-                            <a href="product-detail.html?product=pusadol-sp" class="product-card">
-                                <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=600&h=400&fit=crop" alt="Pusadol SP" class="product-image">
-                                <div class="product-card-body">
-                                    <div class="product-category">Pain Management</div>
-                                    <h5 class="product-name">Pusadol SP</h5>
-                                    <p class="product-benefits">Effective pain relief and management.</p>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Dermatology -->
-                <div class="mb-5">
-                    <h4 class="mb-4"><i class="bi bi-droplet text-primary"></i> Dermatology</h4>
-                    <div class="row">
-                        <div class="col-md-6 col-lg-4 mb-4">
-                            <a href="product-detail.html?product=mupizen" class="product-card">
-                                <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=600&h=400&fit=crop" alt="Mupizen" class="product-image">
-                                <div class="product-card-body">
-                                    <div class="product-category">Dermatology</div>
-                                    <h5 class="product-name">Mupizen</h5>
-                                    <p class="product-benefits">Topical treatment for skin conditions.</p>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Gynae -->
-                <div class="mb-5">
-                    <h4 class="mb-4"><i class="bi bi-gender-female text-primary"></i> Gynae</h4>
-                    <div class="row">
-                        <div class="col-md-6 col-lg-4 mb-4">
-                            <a href="product-detail.html?product=femaguterone-d" class="product-card">
-                                <img src="https://images.unsplash.com/photo-1550572017-edd951b55104?w=600&h=400&fit=crop" alt="Femaguterone D" class="product-image">
-                                <div class="product-card-body">
-                                    <div class="product-category">Gynae</div>
-                                    <h5 class="product-name">Femaguterone D</h5>
-                                    <p class="product-benefits">Women's health and gynecological support.</p>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-md-6 col-lg-4 mb-4">
-                            <a href="product-detail.html?product=pusabtam-q10" class="product-card">
-                                <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&h=400&fit=crop" alt="Pusabtam Q10" class="product-image">
-                                <div class="product-card-body">
-                                    <div class="product-category">Gynae</div>
-                                    <h5 class="product-name">Pusabtam Q10</h5>
-                                    <p class="product-benefits">Coenzyme Q10 for women's wellness.</p>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-md-6 col-lg-4 mb-4">
-                            <a href="product-detail.html?product=feronext-ls" class="product-card">
-                                <img src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=600&h=400&fit=crop" alt="Feronext LS" class="product-image">
-                                <div class="product-card-body">
-                                    <div class="product-category">Gynae</div>
-                                    <h5 class="product-name">Feronext LS</h5>
-                                    <p class="product-benefits">Specialized gynecological health support.</p>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Pediatrics -->
-                <div class="mb-5">
-                    <h4 class="mb-4"><i class="bi bi-heart text-primary"></i> Pediatrics</h4>
-                    <div class="row">
-                        <div class="col-md-6 col-lg-4 mb-4">
-                            <a href="product-detail.html?product=lanozen" class="product-card">
-                                <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=600&h=400&fit=crop" alt="Lanozen" class="product-image">
-                                <div class="product-card-body">
-                                    <div class="product-category">Pediatrics</div>
-                                    <h5 class="product-name">Lanozen</h5>
-                                    <p class="product-benefits">Pediatric liver and digestive support.</p>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
+            </div>
+            
+            <div class="row g-4" id="product-grid">
+                <!-- Products will be dynamically inserted here -->
+            </div>
+            
+            <!-- No Results Message -->
+            <div id="no-results" class="text-center py-5" style="display: none;">
+                <i class="bi bi-search" style="font-size: 4rem; color: var(--text-light);"></i>
+                <h4 class="mt-3">No products found</h4>
+                <p class="text-muted">Try adjusting your search or filter criteria</p>
             </div>
         </div>
     </section>
@@ -557,32 +188,562 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        // Category Toggle Function
-        function showCategory(category) {
-            document.querySelectorAll('.category-content').forEach(content => {
-                content.style.display = 'none';
-            });
-            document.querySelectorAll('.category-tab').forEach(tab => {
-                tab.classList.remove('active');
-            });
-            document.getElementById(category).style.display = 'block';
-            event.target.classList.add('active');
+        // Global variables
+        let productsData = null;
+        let products = [];
+        
+        // Load product data from JSON file
+        async function loadProductData() {
+            // Try fetch first (works on real web servers - http/https)
+            try {
+                const response = await fetch('data/products.json');
+                if (response.ok) {
+                    productsData = await response.json();
+                    products = productsData.products;
+                    initializePage();
+                    return;
+                }
+            } catch (error) {
+                console.warn('Fetch failed, trying XMLHttpRequest:', error);
+            }
+            
+            // Fallback: Use XMLHttpRequest (works with file:// protocol for local development)
+            const xhr = new XMLHttpRequest();
+            xhr.open('GET', 'data/products.json', true);
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === 4) {
+                    if (xhr.status === 200 || xhr.status === 0) { // 0 for file:// protocol
+                        try {
+                            productsData = JSON.parse(xhr.responseText);
+                            products = productsData.products;
+                            initializePage();
+                        } catch (parseError) {
+                            console.error('Error parsing JSON:', parseError);
+                            showError('Failed to parse product data. Please check the JSON file format.');
+                        }
+                    } else {
+                        console.error('Failed to load JSON file. Status:', xhr.status);
+                        showError('Failed to load product data.');
+                    }
+                }
+            };
+            xhr.onerror = function() {
+                console.error('Network error loading JSON file');
+                showError('Network error loading product data.');
+            };
+            xhr.send(null);
         }
         
-        // Check URL parameter for category
-        const urlParams = new URLSearchParams(window.location.search);
-        const category = urlParams.get('category');
-        if (category === 'pharmaceuticals') {
-            showCategory('pharmaceuticals');
-            document.querySelectorAll('.category-tab').forEach(tab => {
-                if (tab.textContent.includes('Pharmaceuticals')) {
-                    tab.classList.add('active');
-                } else {
-                    tab.classList.remove('active');
+        function showError(message) {
+            const errorMsg = message || 'Error loading products.';
+            // Show error message
+            const productGrid = document.getElementById('product-grid');
+            if (productGrid) {
+                productGrid.innerHTML = `<div class="col-12 text-center py-5">
+                    <p class="text-danger">${errorMsg}</p>
+                    <p class="text-muted small mt-2">Please refresh the page or contact support if the problem persists.</p>
+                </div>`;
+            }
+            // Make sure category page is visible if there's an error
+            const categoryPage = document.getElementById('category-page');
+            const listingPage = document.getElementById('product-listing-page');
+            if (categoryPage) categoryPage.style.display = 'block';
+            if (listingPage) listingPage.style.display = 'none';
+        }
+        
+        function initializePage() {
+            // Get category from URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const category = urlParams.get('category');
+            
+            if (category) {
+                // Show product listing page
+                document.getElementById('category-page').style.display = 'none';
+                document.getElementById('product-listing-page').style.display = 'block';
+                
+                // Filter products by category
+                const filteredProducts = products.filter(p => p.category === category);
+                
+                // Update page title and breadcrumb
+                const categoryName = category === 'nutraceuticals' ? 'Nutraceuticals' : 'Pharmaceuticals';
+                document.getElementById('page-title').textContent = categoryName + ' Products';
+                document.getElementById('page-subtitle').textContent = `Browse our ${categoryName.toLowerCase()} products`;
+                document.getElementById('listing-title').textContent = categoryName + ' Products';
+                document.getElementById('breadcrumb-category').textContent = categoryName;
+                document.getElementById('breadcrumb-category-link').innerHTML = `<a href="products.html">Products</a>`;
+                
+                // Group products by subcategory
+                const groupedProducts = {};
+                filteredProducts.forEach(product => {
+                    if (!groupedProducts[product.subcategory]) {
+                        groupedProducts[product.subcategory] = [];
+                    }
+                    groupedProducts[product.subcategory].push(product);
+                });
+                
+                // Render products
+                const productGrid = document.getElementById('product-grid');
+                productGrid.innerHTML = '';
+                
+                // Create subcategory filter pills
+                const subcategoryFiltersContainer = document.getElementById('subcategory-filters-container');
+                const subcategoryFilters = document.getElementById('subcategory-filters');
+                const allSubcategories = Object.keys(groupedProducts);
+                if (allSubcategories.length > 1) {
+                    subcategoryFiltersContainer.style.display = 'block';
+                    // Add click handler to "All" button
+                    const allPill = subcategoryFilters.querySelector('[data-subcategory="all"]');
+                    if (allPill) {
+                        allPill.addEventListener('click', () => filterBySubcategory('all'));
+                    }
+                    // Add other subcategory pills
+                    allSubcategories.forEach(subcategory => {
+                        const pill = document.createElement('button');
+                        pill.className = 'filter-pill';
+                        pill.innerHTML = `<i class="bi bi-tag-fill me-2"></i>${subcategory}`;
+                        pill.setAttribute('data-subcategory', subcategory);
+                        pill.addEventListener('click', () => filterBySubcategory(subcategory));
+                        subcategoryFilters.appendChild(pill);
+                    });
+                }
+                
+                // Store products for filtering
+                window.allProducts = filteredProducts;
+                window.groupedProducts = groupedProducts;
+                
+                // Render products
+                renderProducts(groupedProducts);
+                
+                // Setup search functionality
+                const searchInput = document.getElementById('product-search');
+                if (searchInput) {
+                    searchInput.addEventListener('input', handleSearch);
+                }
+            } else {
+                // Show category page
+                document.getElementById('category-page').style.display = 'block';
+                document.getElementById('product-listing-page').style.display = 'none';
+            }
+        }
+        
+        function renderProducts(groupedProductsToRender) {
+            const productGrid = document.getElementById('product-grid');
+            const noResults = document.getElementById('no-results');
+            productGrid.innerHTML = '';
+            
+            let hasProducts = false;
+            
+            Object.keys(groupedProductsToRender).forEach(subcategory => {
+                if (groupedProductsToRender[subcategory].length > 0) {
+                    hasProducts = true;
+                    // Add subcategory header
+                    const subcategoryHeader = document.createElement('div');
+                    subcategoryHeader.className = 'col-12 mb-4 mt-4';
+                    subcategoryHeader.setAttribute('data-subcategory', subcategory);
+                    subcategoryHeader.innerHTML = `
+                        <div class="subcategory-header">
+                            <h4 class="mb-0">
+                                <i class="bi bi-tag-fill text-primary"></i> ${subcategory}
+                            </h4>
+                            <span class="product-count-badge">${groupedProductsToRender[subcategory].length} products</span>
+                        </div>
+                    `;
+                    productGrid.appendChild(subcategoryHeader);
+                    
+                    // Add products in this subcategory
+                    groupedProductsToRender[subcategory].forEach(product => {
+                        const productCard = document.createElement('div');
+                        productCard.className = 'col-md-6 col-lg-4 mb-4';
+                        productCard.setAttribute('data-subcategory', product.subcategory);
+                        productCard.setAttribute('data-product-name', product.name.toLowerCase());
+                        productCard.innerHTML = `
+                            <a href="product-detail.html?product=${product.id}&category=${product.category}" class="product-card">
+                                <div class="product-image-wrapper">
+                                    <img src="${product.image}" alt="${product.name}" class="product-image">
+                                    <div class="product-overlay">
+                                        <span class="btn btn-light">View Details <i class="bi bi-arrow-right"></i></span>
+                                    </div>
+                                </div>
+                                <div class="product-card-body">
+                                    <div class="product-category-badge">${product.subcategory}</div>
+                                    <h5 class="product-name">${product.name}</h5>
+                                    <p class="product-benefits">${product.description}</p>
+                                    <div class="product-footer">
+                                        <span class="btn btn-sm btn-primary">View Details <i class="bi bi-arrow-right"></i></span>
+                                    </div>
+                                </div>
+                            </a>
+                        `;
+                        productGrid.appendChild(productCard);
+                    });
                 }
             });
+            
+            noResults.style.display = hasProducts ? 'none' : 'block';
         }
+        
+        function filterBySubcategory(subcategory) {
+            // Update active pill
+            document.querySelectorAll('.filter-pill').forEach(pill => {
+                pill.classList.remove('active');
+                if (pill.getAttribute('data-subcategory') === subcategory || 
+                    (subcategory === 'all' && pill.getAttribute('data-subcategory') === 'all')) {
+                    pill.classList.add('active');
+                }
+            });
+            
+            // Filter products
+            if (subcategory === 'all') {
+                renderProducts(window.groupedProducts);
+            } else {
+                const filtered = {};
+                filtered[subcategory] = window.groupedProducts[subcategory] || [];
+                renderProducts(filtered);
+            }
+        }
+        
+        function handleSearch(event) {
+            const searchTerm = event.target.value.toLowerCase().trim();
+            const filtered = {};
+            
+            Object.keys(window.groupedProducts).forEach(subcategory => {
+                const matchingProducts = window.groupedProducts[subcategory].filter(product => 
+                    product.name.toLowerCase().includes(searchTerm) ||
+                    product.description.toLowerCase().includes(searchTerm) ||
+                    product.subcategory.toLowerCase().includes(searchTerm)
+                );
+                
+                if (matchingProducts.length > 0) {
+                    filtered[subcategory] = matchingProducts;
+                }
+            });
+            
+            renderProducts(filtered);
+        }
+        
+        // Initialize on page load
+        loadProductData();
     </script>
+    <style>
+        /* Category Cards */
+        .category-card {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: none;
+            overflow: hidden;
+            position: relative;
+        }
+        .category-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(0,102,204,0.1), rgba(0,61,122,0.1));
+            opacity: 0;
+            transition: opacity 0.4s;
+            z-index: 1;
+        }
+        .category-card:hover::before {
+            opacity: 1;
+        }
+        .category-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 15px 40px rgba(0,102,204,0.25) !important;
+        }
+        .category-card-link {
+            text-decoration: none;
+            color: inherit;
+        }
+        .category-card-link:hover {
+            text-decoration: none;
+            color: inherit;
+        }
+        .category-icon {
+            font-size: 4rem;
+            color: var(--primary-color, #0066cc);
+            transition: transform 0.4s;
+        }
+        .category-card:hover .category-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+        .category-card .card-img-top {
+            height: 280px;
+            object-fit: cover;
+            transition: transform 0.4s;
+        }
+        .category-card:hover .card-img-top {
+            transform: scale(1.1);
+        }
+        
+        /* Product Listing Header */
+        .product-listing-header {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            padding: 2rem;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+        }
+        
+        /* Subcategory Filters Container */
+        .subcategory-filters-container {
+            margin-bottom: 2rem;
+        }
+        
+        /* Subcategory Filters */
+        .subcategory-filters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            padding: 1.75rem 1.5rem 1.5rem;
+            background: linear-gradient(135deg, #f8f9fa, #ffffff);
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            border: 1px solid rgba(0,102,204,0.1);
+            position: relative;
+        }
+        .subcategory-filters::before {
+            content: 'Filter by Category';
+            position: absolute;
+            top: -12px;
+            left: 20px;
+            background: white;
+            padding: 0 1rem;
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .filter-pill {
+            padding: 0.85rem 2rem;
+            border: 2px solid var(--gray-light);
+            background: white;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: var(--text-dark);
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            min-height: 48px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        .filter-pill::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.5s;
+        }
+        .filter-pill:hover::before {
+            left: 100%;
+        }
+        .filter-pill:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 6px 20px rgba(0,102,204,0.2);
+            background: rgba(0,102,204,0.05);
+        }
+        .filter-pill.active {
+            background: linear-gradient(135deg, var(--primary-color), var(--dark-blue));
+            color: white;
+            border-color: transparent;
+            box-shadow: 0 6px 25px rgba(0,102,204,0.4);
+            transform: translateY(-2px);
+            font-weight: 700;
+        }
+        .filter-pill.active:hover {
+            transform: translateY(-4px) scale(1.05);
+            box-shadow: 0 8px 30px rgba(0,102,204,0.5);
+        }
+        .filter-pill[data-subcategory="all"] {
+            background: linear-gradient(135deg, #6c757d, #495057);
+            color: white;
+            border-color: transparent;
+            font-weight: 700;
+        }
+        .filter-pill[data-subcategory="all"]:not(.active) {
+            background: linear-gradient(135deg, #6c757d, #495057);
+        }
+        .filter-pill[data-subcategory="all"]:hover:not(.active) {
+            background: linear-gradient(135deg, #5a6268, #3d4146);
+            transform: translateY(-3px) scale(1.05);
+        }
+        
+        /* Subcategory Header */
+        .subcategory-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 1.5rem;
+            background: linear-gradient(135deg, rgba(0,102,204,0.05), rgba(0,61,122,0.05));
+            border-radius: 12px;
+            border-left: 4px solid var(--primary-color);
+        }
+        .product-count-badge {
+            background: var(--primary-color);
+            color: white;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+        
+        /* Enhanced Product Cards */
+        .product-card {
+            display: block;
+            text-decoration: none;
+            color: inherit;
+            height: 100%;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border-radius: 15px;
+            overflow: hidden;
+            background: white;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border: 2px solid transparent;
+        }
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 35px rgba(0,102,204,0.25);
+            text-decoration: none;
+            color: inherit;
+            border-color: var(--primary-color);
+        }
+        .product-image-wrapper {
+            position: relative;
+            overflow: hidden;
+            height: 250px;
+        }
+        .product-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s;
+        }
+        .product-card:hover .product-image {
+            transform: scale(1.1);
+        }
+        .product-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,102,204,0.9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.4s;
+        }
+        .product-card:hover .product-overlay {
+            opacity: 1;
+        }
+        .product-card-body {
+            padding: 1.75rem;
+        }
+        .product-category-badge {
+            display: inline-block;
+            font-size: 0.75rem;
+            color: var(--primary-color);
+            background: rgba(0,102,204,0.1);
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+        .product-name {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            color: var(--dark-color, #333);
+            line-height: 1.3;
+        }
+        .product-benefits {
+            font-size: 0.95rem;
+            color: #666;
+            margin-bottom: 1rem;
+            line-height: 1.6;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        .product-footer {
+            margin-top: auto;
+        }
+        
+        /* Search Input */
+        .product-filters {
+            position: relative;
+            max-width: 300px;
+        }
+        .search-icon {
+            position: absolute;
+            left: 1.25rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-light);
+            font-size: 1.1rem;
+            z-index: 2;
+            pointer-events: none;
+            transition: color 0.3s;
+        }
+        #product-search {
+            border-radius: 30px;
+            border: 2px solid var(--gray-light);
+            padding: 0.85rem 1.5rem 0.85rem 3rem;
+            transition: all 0.3s;
+            font-size: 0.95rem;
+            min-height: 48px;
+            background: white;
+            width: 100%;
+        }
+        #product-search:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 4px 15px rgba(0,102,204,0.2);
+            outline: none;
+        }
+        #product-search:focus + .search-icon,
+        .product-filters:focus-within .search-icon {
+            color: var(--primary-color);
+        }
+        
+        @media (max-width: 768px) {
+            .subcategory-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.5rem;
+            }
+            .product-listing-header {
+                padding: 1.5rem;
+            }
+            .subcategory-filters {
+                padding: 1.5rem 1rem 1.25rem;
+                gap: 0.75rem;
+            }
+            .filter-pill {
+                padding: 0.75rem 1.5rem;
+                font-size: 0.9rem;
+                min-height: 44px;
+            }
+            .subcategory-filters::before {
+                font-size: 0.75rem;
+                left: 15px;
+                padding: 0 0.75rem;
+            }
+        }
+    </style>
 </body>
 </html>
-

@@ -1257,12 +1257,28 @@ body.content-hidden > *:not(.preloader) {
 }
 
 .breadcrumb-custom a {
-    color: var(--primary-color);
+    color: rgba(255, 255, 255, 0.9);
     text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.breadcrumb-custom a:hover {
+    color: rgba(255, 255, 255, 1);
+    text-decoration: underline;
+}
+
+.breadcrumb-custom .breadcrumb-item {
+    color: rgba(255, 255, 255, 0.9);
 }
 
 .breadcrumb-custom .active {
-    color: var(--text-light);
+    color: rgba(255, 255, 255, 1);
+    font-weight: 500;
+}
+
+.breadcrumb-custom .breadcrumb-item + .breadcrumb-item::before {
+    color: rgba(255, 255, 255, 0.6);
+    content: "/";
 }
 
 /* Page Header */
@@ -1349,6 +1365,203 @@ body.content-hidden > *:not(.preloader) {
 
 .fade-in-up {
     animation: fadeInUp 0.6s ease-out;
+}
+
+/* Enhanced Product Detail Page Styles */
+.product-hero-content {
+    color: white;
+}
+
+.product-quick-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.product-image-container {
+    position: relative;
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.product-info-item {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--gray-light);
+}
+
+.product-info-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.info-label {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.info-label i {
+    color: var(--primary-color);
+}
+
+.info-value {
+    font-size: 1rem;
+    color: var(--text-dark);
+    font-weight: 500;
+}
+
+.sidebar-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.sticky-sidebar {
+    position: sticky;
+    top: 100px;
+    z-index: 10;
+}
+
+.quick-nav-section {
+    position: relative;
+    z-index: 5;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    margin-top: 0;
+    overflow: visible;
+}
+
+.quick-nav-section h4 {
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.quick-nav-section h4 i {
+    font-size: 1.2rem;
+}
+
+.quick-nav-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+/* Horizontal quick nav layout (for product detail page) */
+.quick-nav-list[style*="flex-direction: row"] {
+    flex-direction: row !important;
+}
+
+.quick-nav-list[style*="flex-direction: row"] .quick-nav-item {
+    flex: 1;
+    min-width: 200px;
+    max-width: 300px;
+}
+
+.quick-nav-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: var(--light-bg);
+    border-radius: 12px;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s;
+    border: 2px solid transparent;
+}
+
+.quick-nav-item:hover {
+    background: white;
+    border-color: var(--primary-color);
+    transform: translateY(-3px);
+    text-decoration: none;
+    color: inherit;
+    box-shadow: 0 6px 20px rgba(0,102,204,0.15);
+}
+
+.quick-nav-list[style*="flex-direction: row"] .quick-nav-item:hover {
+    transform: translateY(-3px) scale(1.02);
+}
+
+.quick-nav-item i:first-child {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    width: 30px;
+    text-align: center;
+}
+
+.quick-nav-item > div {
+    flex: 1;
+}
+
+.quick-nav-item strong {
+    display: block;
+    color: var(--text-dark);
+    margin-bottom: 0.25rem;
+}
+
+.quick-nav-item small {
+    color: var(--text-light);
+    font-size: 0.85rem;
+}
+
+.quick-nav-item i:last-child {
+    color: var(--text-light);
+    transition: transform 0.3s;
+}
+
+.quick-nav-item:hover i:last-child {
+    transform: translateX(5px);
+    color: var(--primary-color);
+}
+
+/* Responsive improvements */
+@media (max-width: 992px) {
+    .sticky-sidebar {
+        position: relative;
+        top: 0;
+    }
+    
+    .sidebar-wrapper {
+        gap: 1.5rem;
+    }
+    
+    .quick-nav-section {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+    
+    .product-quick-actions {
+        flex-direction: column;
+    }
+    
+    .product-quick-actions .btn {
+        width: 100%;
+    }
+    
+    /* Horizontal quick nav responsive */
+    .quick-nav-list[style*="flex-direction: row"] {
+        flex-direction: column !important;
+    }
+    
+    .quick-nav-list[style*="flex-direction: row"] .quick-nav-item {
+        max-width: 100%;
+        width: 100%;
+    }
 }
 
 /* Industrial Accents */

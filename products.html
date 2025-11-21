@@ -194,6 +194,16 @@
         
         // Load product data from JSON file
         async function loadProductData() {
+            // Show category page by default while loading
+            const categoryPage = document.getElementById('category-page');
+            const listingPage = document.getElementById('product-listing-page');
+            if (categoryPage) categoryPage.style.display = 'block';
+            if (listingPage) listingPage.style.display = 'none';
+            
+            // Create abort controller to prevent multiple simultaneous requests
+            const abortController = new AbortController();
+            const timeoutId = setTimeout(() => abortController.abort(), 10000); // 10 second timeout
+            
             // Try multiple paths for compatibility
             const jsonPaths = [
                 './data/products.json',
@@ -202,63 +212,93 @@
             ];
             
             // Try fetch first (works on real web servers - http/https)
+            let loaded = false;
             for (const jsonPath of jsonPaths) {
+                if (loaded) break; // Stop if already loaded
+                
                 try {
                     console.log('Trying to load:', jsonPath);
-                    const response = await fetch(jsonPath);
+                    const response = await fetch(jsonPath, {
+                        signal: abortController.signal,
+                        cache: 'no-cache'
+                    });
+                    
                     if (response.ok) {
+                        clearTimeout(timeoutId);
                         productsData = await response.json();
                         products = productsData.products;
                         console.log('Successfully loaded products:', products.length);
+                        loaded = true;
                         initializePage();
                         return;
                     } else {
                         console.warn('Failed to load:', jsonPath, 'Status:', response.status);
                     }
                 } catch (error) {
-                    console.warn('Fetch failed for', jsonPath, ':', error);
+                    if (error.name === 'AbortError') {
+                        console.warn('Request aborted for:', jsonPath);
+                    } else {
+                        console.warn('Fetch failed for', jsonPath, ':', error.message);
+                    }
                 }
             }
             
-            // Fallback: Use XMLHttpRequest (works with file:// protocol for local development)
-            console.log('Trying XMLHttpRequest fallback...');
-            const xhr = new XMLHttpRequest();
-            xhr.open('GET', './data/products.json', true);
-            xhr.onreadystatechange = function() {
-                if (xhr.readyState === 4) {
-                    if (xhr.status === 200 || xhr.status === 0) { // 0 for file:// protocol
-                        try {
-                            productsData = JSON.parse(xhr.responseText);
-                            products = productsData.products;
-                            console.log('Successfully loaded products via XHR:', products.length);
-                            initializePage();
-                        } catch (parseError) {
-                            console.error('Error parsing JSON:', parseError);
-                            showError('Failed to parse product data. Please check the JSON file format.');
+            // If fetch failed, try XMLHttpRequest (works with file:// protocol for local development)
+            if (!loaded) {
+                clearTimeout(timeoutId);
+                console.log('Trying XMLHttpRequest fallback...');
+                const xhr = new XMLHttpRequest();
+                xhr.timeout = 10000; // 10 second timeout
+                
+                xhr.open('GET', './data/products.json', true);
+                xhr.onreadystatechange = function() {
+                    if (xhr.readyState === 4) {
+                        if (xhr.status === 200 || xhr.status === 0) { // 0 for file:// protocol
+                            try {
+                                productsData = JSON.parse(xhr.responseText);
+                                products = productsData.products;
+                                console.log('Successfully loaded products via XHR:', products.length);
+                                loaded = true;
+                                initializePage();
+                            } catch (parseError) {
+                                console.error('Error parsing JSON:', parseError);
+                                showError('Failed to parse product data. Please check the JSON file format.');
+                            }
+                        } else if (xhr.status !== 0) { // Don't show error for file:// protocol
+                            console.error('Failed to load JSON file. Status:', xhr.status);
+                            showError('Failed to load product data. Status: ' + xhr.status);
                         }
-                    } else {
-                        console.error('Failed to load JSON file. Status:', xhr.status);
-                        showError('Failed to load product data. Please check the console for details.');
                     }
-                }
-            };
-            xhr.onerror = function() {
-                console.error('Network error loading JSON file');
-                showError('Network error loading product data. Please ensure you are running a web server.');
-            };
-            xhr.send(null);
+                };
+                xhr.ontimeout = function() {
+                    console.error('Request timeout loading JSON file');
+                    showError('Request timeout. Please check your connection.');
+                };
+                xhr.onerror = function() {
+                    console.error('Network error loading JSON file');
+                    showError('Network error loading product data. Please check the console for details.');
+                };
+                xhr.send(null);
+            }
         }
         
         function showError(message) {
             const errorMsg = message || 'Error loading products.';
+            console.error('Error:', errorMsg);
+            
             // Show error message
             const productGrid = document.getElementById('product-grid');
             if (productGrid) {
                 productGrid.innerHTML = `<div class="col-12 text-center py-5">
-                    <p class="text-danger">${errorMsg}</p>
-                    <p class="text-muted small mt-2">Please refresh the page or contact support if the problem persists.</p>
+                    <div class="alert alert-warning" role="alert">
+                        <h5><i class="bi bi-exclamation-triangle"></i> Loading Error</h5>
+                        <p class="mb-0">${errorMsg}</p>
+                        <p class="text-muted small mt-2">Please refresh the page or contact support if the problem persists.</p>
+                        <button class="btn btn-primary btn-sm mt-2" onclick="location.reload()">Reload Page</button>
+                    </div>
                 </div>`;
             }
+            
             // Make sure category page is visible if there's an error
             const categoryPage = document.getElementById('category-page');
             const listingPage = document.getElementById('product-listing-page');

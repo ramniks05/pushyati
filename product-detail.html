@@ -236,6 +236,10 @@
         
         // Load product data from JSON file
         async function loadProductData() {
+            // Create abort controller to prevent multiple simultaneous requests
+            const abortController = new AbortController();
+            const timeoutId = setTimeout(() => abortController.abort(), 10000); // 10 second timeout
+            
             // Try multiple paths for compatibility
             const jsonPaths = [
                 './data/products.json',
@@ -244,11 +248,19 @@
             ];
             
             // Try fetch first (works on real web servers - http/https)
+            let loaded = false;
             for (const jsonPath of jsonPaths) {
+                if (loaded) break; // Stop if already loaded
+                
                 try {
                     console.log('Trying to load:', jsonPath);
-                    const response = await fetch(jsonPath);
+                    const response = await fetch(jsonPath, {
+                        signal: abortController.signal,
+                        cache: 'no-cache'
+                    });
+                    
                     if (response.ok) {
+                        clearTimeout(timeoutId);
                         productsData = await response.json();
                         
                         // Convert products array to object with id as key for easy lookup
@@ -269,60 +281,75 @@
                         });
                         
                         console.log('Successfully loaded products:', Object.keys(products).length);
+                        loaded = true;
                         initializeProductPage();
                         return;
                     } else {
                         console.warn('Failed to load:', jsonPath, 'Status:', response.status);
                     }
                 } catch (error) {
-                    console.warn('Fetch failed for', jsonPath, ':', error);
+                    if (error.name === 'AbortError') {
+                        console.warn('Request aborted for:', jsonPath);
+                    } else {
+                        console.warn('Fetch failed for', jsonPath, ':', error.message);
+                    }
                 }
             }
             
-            // Fallback: Use XMLHttpRequest (works with file:// protocol for local development)
-            console.log('Trying XMLHttpRequest fallback...');
-            const xhr = new XMLHttpRequest();
-            xhr.open('GET', './data/products.json', true);
-            xhr.onreadystatechange = function() {
-                if (xhr.readyState === 4) {
-                    if (xhr.status === 200 || xhr.status === 0) { // 0 for file:// protocol
-                        try {
-                            productsData = JSON.parse(xhr.responseText);
-                            
-                            // Convert products array to object with id as key for easy lookup
-                            productsData.products.forEach(product => {
-                                products[product.id] = {
-                                    name: product.name,
-                                    category: product.subcategory,
-                                    image: product.image,
-                                    description: product.details.descriptionDetail,
-                                    descriptionDetail: product.details.descriptionDetail,
-                                    uses: product.details.uses,
-                                    benefits: product.details.benefits,
-                                    composition: product.details.composition,
-                                    dosage: product.details.dosage,
-                                    pack: product.details.pack,
-                                    storage: product.details.storage
-                                };
-                            });
-                            
-                            console.log('Successfully loaded products via XHR:', Object.keys(products).length);
-                            initializeProductPage();
-                        } catch (parseError) {
-                            console.error('Error parsing JSON:', parseError);
-                            document.getElementById('product-name').textContent = 'Error Loading Product';
+            // If fetch failed, try XMLHttpRequest (works with file:// protocol for local development)
+            if (!loaded) {
+                clearTimeout(timeoutId);
+                console.log('Trying XMLHttpRequest fallback...');
+                const xhr = new XMLHttpRequest();
+                xhr.timeout = 10000; // 10 second timeout
+                
+                xhr.open('GET', './data/products.json', true);
+                xhr.onreadystatechange = function() {
+                    if (xhr.readyState === 4) {
+                        if (xhr.status === 200 || xhr.status === 0) { // 0 for file:// protocol
+                            try {
+                                productsData = JSON.parse(xhr.responseText);
+                                
+                                // Convert products array to object with id as key for easy lookup
+                                productsData.products.forEach(product => {
+                                    products[product.id] = {
+                                        name: product.name,
+                                        category: product.subcategory,
+                                        image: product.image,
+                                        description: product.details.descriptionDetail,
+                                        descriptionDetail: product.details.descriptionDetail,
+                                        uses: product.details.uses,
+                                        benefits: product.details.benefits,
+                                        composition: product.details.composition,
+                                        dosage: product.details.dosage,
+                                        pack: product.details.pack,
+                                        storage: product.details.storage
+                                    };
+                                });
+                                
+                                console.log('Successfully loaded products via XHR:', Object.keys(products).length);
+                                loaded = true;
+                                initializeProductPage();
+                            } catch (parseError) {
+                                console.error('Error parsing JSON:', parseError);
+                                document.getElementById('product-name').textContent = 'Error Loading Product';
+                            }
+                        } else if (xhr.status !== 0) { // Don't show error for file:// protocol
+                            console.error('Failed to load JSON file. Status:', xhr.status);
+                            document.getElementById('product-name').textContent = 'Product Not Found';
                         }
-                    } else {
-                        console.error('Failed to load JSON file. Status:', xhr.status);
-                        document.getElementById('product-name').textContent = 'Product Not Found';
                     }
-                }
-            };
-            xhr.onerror = function() {
-                console.error('Network error loading JSON file');
-                document.getElementById('product-name').textContent = 'Error Loading Product';
-            };
-            xhr.send(null);
+                };
+                xhr.ontimeout = function() {
+                    console.error('Request timeout loading JSON file');
+                    document.getElementById('product-name').textContent = 'Request Timeout';
+                };
+                xhr.onerror = function() {
+                    console.error('Network error loading JSON file');
+                    document.getElementById('product-name').textContent = 'Error Loading Product';
+                };
+                xhr.send(null);
+            }
         }
         
         function initializeProductPage() {
